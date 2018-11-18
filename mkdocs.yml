@@ -1,0 +1,41 @@
+site_name: Imba guide
+site_author: Hajime Yamasaki Vukelic
+copyright: (C)2018 by Hajime Yamasaki Vukelic. Some rights reserved.
+nav:
+  - Introductory chapter:
+    - index.md
+    - sample.md
+    - structure.md
+    - tips.md
+    - javascript.md
+    - editors.md
+  - Chapter 1 - Language basics:
+    - ch1/index.md
+    - ch1/comments.md
+    - ch1/statements.md
+    - ch1/vars.md
+    - ch1/methods.md
+    - ch1/do.md
+    - ch1/primitives.md
+    - ch1/regexps.md
+    - ch1/arrays.md
+    - ch1/objects.md
+    - ch1/operators.md
+    - ch1/controls.md
+  - Chapter 2 - Advanced concepts:
+    - ch2/index.md
+    - ch2/modules.md
+    - ch2/classes.md
+    - ch2/tags.md
+    - ch2/async.md
+  - Appendices:
+    - appendices/index.md
+    - appendices/setup.md
+    - appendices/migration.md
+
+markdown_extensions:
+  - codehilite
+  - toc:
+      permalink: true
+
+theme: readthedocs

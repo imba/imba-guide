@@ -4,7 +4,10 @@
   "description": "A guide to Imba language and platform",
   "main": "dist/client.js",
   "scripts": {
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "watch:docs": "mkdocs serve",
+    "build": "webpack",
+    "build:docs": "mkdocs build"
   },
   "keywords": [
     "Imba",

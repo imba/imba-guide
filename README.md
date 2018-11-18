@@ -25,7 +25,8 @@ Install the dependencies for the playground:
 
 ## Quick start
 
-To build the documentation, go to the project directory and run `make`.
+To build the documentation, go to the project directory and run 
+`npm run build:docs`.
 
 The compiled documentation should be present in `build/html/index.html`. Open 
 that file in your browser.
@@ -48,3 +49,10 @@ The compiled JavaScript will appear in `dist/client.js`.
 - `build/` - generated HTML for the documentation (appears after running `make`)
 - `code/` - playground code
 - `dist/` - compiled JavaScript for the playground
+
+## Contributing
+
+If you wish to contribute to this project, you may find it helpful to know
+that the project uses [MkDocs](https://www.mkdocs.org/). The 
+`npm run watch:docs` command will spin up a local server on port `8000` that 
+will update as you edit.
