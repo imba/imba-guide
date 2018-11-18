@@ -4,11 +4,12 @@ copyright: (C)2018 by Hajime Yamasaki Vukelic. Some rights reserved.
 nav:
   - Introductory chapter:
     - index.md
-    - sample.md
-    - structure.md
-    - tips.md
-    - javascript.md
-    - editors.md
+    - ch0/about.md
+    - ch0/sample.md
+    - ch0/structure.md
+    - ch0/tips.md
+    - ch0/javascript.md
+    - ch0/editors.md
   - Chapter 1 - Language basics:
     - ch1/index.md
     - ch1/comments.md
@@ -28,13 +29,18 @@ nav:
     - ch2/classes.md
     - ch2/tags.md
     - ch2/async.md
+    - ch2/global.md
+    - ch2/listcomps.md
   - Appendices:
     - appendices/index.md
     - appendices/setup.md
     - appendices/migration.md
 
 markdown_extensions:
-  - codehilite
+  - codehilite:
+      guess_lang: false
+      linenums: true
+  - admonition
   - toc:
       permalink: true
 
