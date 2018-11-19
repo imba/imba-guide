@@ -8,10 +8,10 @@ in modern web frameworks.
 
 ## Short history of the project
 
-Imba started around 2010 by Sindre Aarsaether
+Imba was created around 2010 by Sindre Aarsaether
 ([@somebee](https://github.com/somebee/)) as a private project to port Ruby
 to browsers. As time progressed, the project morphed into an effort to create
-an optimal platform for front end development. 
+an optimal platform for front end development.
 
 Even though the speed was not one of the original goals, the implementation
 of the Imba's DOM reconciler, also known as ['memoized
