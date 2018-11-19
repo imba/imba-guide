@@ -1,6 +1,6 @@
 # Imba guide
 
-This is a quick guide for Imba v1.3, which focuses on the language itself. For 
+This is a quick guide for Imba v1.4, which focuses on the language itself. For 
 an introduction to Imba features, please refer to the official website at
 [imba.io](https://imba.io/).
 
@@ -25,9 +25,9 @@ Network](https://developer.mozilla.org/en-US/docs/Web/API).
 **If you are coming from JavaScript**, you may still want to read
 through this guide as a refresher for some of the concepts. Or you may simply
 skip from one code snippet to another, and only read the surrounding text if
-the code looks unfamiliar. You will also find [a section](./javascript.md) on
-tips and gotchas for JavaScript developers, that cover some of the common
-pitfalls.
+the code looks unfamiliar. You will also find [a
+section](./ch0/javascript.md) on tips and gotchas for JavaScript developers,
+that cover some of the common pitfalls.
 
 ## How to use this guide
 
