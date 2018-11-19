@@ -1,13 +1,22 @@
 # About Imba
 
-Imba is a multi-paradigm object-based language which transpiles to JavaScript.
-It is primarily developed for web development, although it can be used to write
-general purpose NodeJS programs.
+Imba is a multi-paradigm object-based language which transpiles to performant
+JavaScript. It is primarily developed for web development, although it can be
+used to write general purpose NodeJS programs. Imba has first-class tags, a
+declarative syntax for creating and updating DOM nodes similar to components
+in modern web frameworks.
 
-Imba started as a private project to power the Scrimba.com service. It is
-created and (as of this writing) maintained by Sindre Aarsaether 
-([@somebee](https://github.com/somebee/)). The first commit to the Imba's
-GitHub repository had been made on Mar 3, 2015.
+## Short history of the project
+
+Imba started around 2010 by Sindre Aarsaether
+([@somebee](https://github.com/somebee/)) as a private project to port Ruby
+to browsers. As time progressed, the project morphed into an effort to create
+an optimal platform for front end development. 
+
+Even though the speed was not one of the original goals, the implementation
+of the Imba's DOM reconciler, also known as ['memoized
+DOM'](../appendices/memoized.md), has stood the test of time, and is, to date,
+one of the fastest implementations of DOM reconciler on the market.
 
 ## Relationship between Imba and JavaScript
 
