@@ -24,8 +24,8 @@ tools to normalize indentation style.
 
 ## Implicit return
 
-The last expression that *evaluates* in a function is also its return value.
-This means that most of the time you do not need an explicit return.
+The last statement in a function is also its return value. This means that
+most of the time you do not need an explicit return in most cases.
 
 For instance:
 
@@ -35,6 +35,27 @@ def div x, y
         window.Infinity
     else
         x / y
+```
+
+Note that if we omit the `else` clause in the above function, then we have a 
+different situation:
+
+```imba
+def div x, y
+    if y == 0
+        window.Infinity
+    x / y
+```
+
+In this case, `x / y` is the last statement, so that is always the return value.
+In order to ever return the `window.Infinity` value, we would need to use the
+`return` statement:
+
+```imba
+def div x, y
+    if y == 0
+        return window.Infinity
+    x / y
 ```
 
 ### `self` and `this`
