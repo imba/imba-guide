@@ -274,7 +274,7 @@ someObj.foo() == 2      // true
 someObj._foo            // 2
 ```
 
-### Imba methods are not first-class
+### Imba methods are not first-class by default
 
 [Methods](../ch1/methods.md), a.k.a. functions that are defined using the
 `def` keyword, are not first-class objects in Imba. This is one of the more
@@ -287,21 +287,23 @@ def someFunc
     false
 ```
 
-you cannot assign it to variables or pass it around as arguments.
+you cannot assign it to variables or pass it around as arguments because of the 
+implicit call feature.
 
-The [`do` blocks](../ch1/do.md), a.k.a. lambdas or function
-expressions, *can* be assigned and passed around, and this is what you should
-use if that is the behavior you want.
+To make methods behave as in JavaScript, they need to be defined using a `var
+def` instead.
 
+```imba
+var def someFunc
+    flase
 ```
-var someFunc = do false
-```
 
-Note, though, that with `do` blocks assigned to variables, you do not have the
-implicit function call behavior. The above function must be called with 
-parentheses:
+Functions defined with `var def` are no longer implicitly called when their name
+is referenced so they can be passed around or assigned to variables.
 
-```
+To call the method defined with `var def`, you need to use parentheses.
+
+```imba
 someFunc()
 ```
 
@@ -359,12 +361,14 @@ The following names do not require a prefix:
 - `__dirname`
 
 If you find it tedious to use the prefix, you can declare functions global by 
-using the `extern` keyword. This only works with functions, though, not 
-properties.
+using the `extern` keyword.
 
 ```imba
 extern scrollTo
 scrollTo 120        #>> scrollTo(120)
+
+extern location
+location:href
 ```
 
 ### Aliases for Boolean values
