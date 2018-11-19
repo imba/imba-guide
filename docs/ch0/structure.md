@@ -31,3 +31,11 @@ line or the line below, and will be in the `#>> code...` format for brevity.
 
 When the space does not permit, compiled code will be presented as a separate 
 code block that includes the comment `/*** compiler output ***/` at the top.
+
+### JavaScript programmer warnings
+
+In some sections, we include a warning box to warn JavaScript developers of
+significant differences between Imba and JavaScript. Like this:
+
+!!! warning
+    JavaScript developers, beware of this difference!
