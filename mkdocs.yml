@@ -37,6 +37,7 @@ nav:
     - bonus/migration.md
     - bonus/escapes.md
     - bonus/memoized.md
+    - bonus/typedet.md
 
 markdown_extensions:
   - codehilite:
