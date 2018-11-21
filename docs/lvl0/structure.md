@@ -2,19 +2,23 @@
 
 The guide is divided into three parts.
 
-[**Chapter 1**](../ch1/index.md) covers the language basics. It gives you a
+[**Level 1**](../lvl1/index.md) covers the language basics. It gives you a
 fairly complete coverage of all the basics that would be required to write
 very simple programs.
 
-[**Chapter 2**](../ch2/index.md) covers the more complex concepts such as
+[**Level 2**](../lvl2/index.md) covers the more complex concepts such as
 modules and classes. It will give you a good foundation for the syntax and
 mechanics of these concepts without going too deep into how you can use them
 (there are better books on the topic).
 
-[**Appendices**](../appendices/index.md) will cover miscellaneous topics that
-are outside of the scope of a *language* guide. These topics include editor
-such things as building and testing Imba programs, and tips of those of you
-who come from a JavaScript background.
+**Bonus** material will cover miscellaneous topics that are outside of the
+scope of a *language* guide. These topics include such things as building and
+testing Imba programs.
+
+## Cheats
+
+Each section has a **Cheats** heading which gives an express overview for
+experienced programmers.
 
 ## Conventions
 

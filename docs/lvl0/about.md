@@ -1,10 +1,10 @@
 # About Imba
 
-Imba is a multi-paradigm object-based language which transpiles to performant
-JavaScript. It is primarily developed for web development, although it can be
-used to write general purpose NodeJS programs. Imba has first-class tags, a
-declarative syntax for creating and updating DOM nodes similar to components
-in modern web frameworks.
+Imba is a dynamically typed multi-paradigm object-based language which
+transpiles to performant JavaScript. It is primarily developed for web
+development, although it can be used to write general purpose NodeJS
+programs. Imba has first-class tags, a declarative syntax for creating and
+updating DOM nodes similar to components in modern web frameworks.
 
 ## Short history of the project
 
@@ -17,6 +17,12 @@ Even though the speed was not one of the original goals, the implementation
 of the Imba's DOM reconciler, also known as ['memoized
 DOM'](../appendices/memoized.md), has stood the test of time, and is, to date,
 one of the fastest implementations of DOM reconciler on the market.
+
+## About the name
+
+The name Imba comes from the term 'imba' commonly used in the gaming world
+to point to a character or an item that is overpowered and therefore causes 
+the gameplay to become imbalanced.
 
 ## Relationship between Imba and JavaScript
 

@@ -10,8 +10,8 @@ programmer may encounter while learning Imba. This list is not exhaustive by any
 means, and is based on the author's own experiences.
 
 If you are not familiar with advanced JavaScript, you may not run into any of 
-these issues, so we recommend that you move on to the next chapter and come back
-to this one if you run into trouble.
+these issues, so we recommend that you move on to the next level and come back
+to this section if you run into trouble.
 
 ## Significant whitespace
 
@@ -107,9 +107,9 @@ method call in some situations.
 Because there are so many cases in which the result can be what you did not 
 expect, we'll first lay down some guidelines, and then discuss what won't work.
 
-- In [methods](../ch1/methods.md) (functions defined using `def` keyword)
+- In [methods](../lvl1/methods.md) (functions defined using `def` keyword)
   that are defined in module scope, do not use undeclared variables.
-- In methods in [classes](../ch2/classes.md) and [tags](../ch2/tags.md), only
+- In methods in [classes](../lvl2/classes.md) and [tags](../lvl2/tags.md), only
   reference undeclared names for properties (props) and methods that are
   declared (or the special `data` property in tags).
 - Do not define methods inside methods. Use `do` blocks instead.
@@ -276,7 +276,7 @@ someObj._foo            // 2
 
 ### Imba methods are not first-class by default
 
-[Methods](../ch1/methods.md), a.k.a. functions that are defined using the
+[Methods](../lvl1/methods.md), a.k.a. functions that are defined using the
 `def` keyword, are not first-class objects in Imba. This is one of the more
 significant differences compared to JavaScript.
 
@@ -371,62 +371,26 @@ extern location
 location:href
 ```
 
-### Aliases for Boolean values
+## Aliases for Boolean values
 
 Boolean values `true` and `false` have aliases, `yes` and `no` respectively.
 There is no difference between the two forms.
 
-### Variable arity functions
+## Rest spread
 
-If you are used to writing functions that use splats to capture multiple 
-trailing arguments, you may be confused as to how to do this in Imba.
-
-For example, in JavaScript, you may be doing something like this:
+In JavaScript (ES6) you may have used rest spread operators:
 
 ```javascript
-function someFunc(x, ...rest) {
-    // ...
+function collectChildren(parent, ...children) {
+    children.forEach(parent.registerChild)
 }
 ```
 
-or this:
-
-```javascript
-function someFunc(x) {
-    var rest = [].slice.call(arguments, 1);
-}
-```
-
-The `arguments` object is available as a `$0` special variable. `$0` compiles
-directly to `arguments`, so it cannot be sliced as is. Here is some code that
-demonstrate how to slice the arguments:
+Imba's operator for the rest spread is a `*`:
 
 ```imba
-def someFunc x
-    var rest = v for v, i in $0 when i > 0 
-    # ...
-```
-
-There is no native way to apply the capture arguments to a function, though, as 
-Imba does not treat methods as first-class objects. To work around this, we 
-need to embed JavaScript. Code within backticks in the snippet below is plain
-JavaScript which will not be touched by the compiler.
-
-```imba
-def partial f
-    var args = arg for arg, i in $0 when i > 0
-    `f.bind(void 0, args)`      #>> return f.bind(void 0, arg)
-```
-
-You already probably know, though, that methods in Imba cannot be passed around
-as values, so the above `partial` function would normally go to waste. However,
-we can, again, use embedded JavaScript to work around this:
-
-```imba
-def add x, y
-    x + y
-
-var inc = partial `add`, 1  #>> var inc = partial(add,1)
+def collectChildren parent, *children
+    children.forEach parent:registerChild
 ```
 
 ## Passing `do` blocks to functions

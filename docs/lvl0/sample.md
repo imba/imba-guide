@@ -25,11 +25,11 @@ Scrimba](https://scrimba.com/c/cZem7tB).
 
 ## Breakdown
 
-The state [variable](../ch1/vars.md) is an [object](../ch1/objects.md) that 
+The state [variable](../lvl1/vars.md) is an [object](../lvl1/objects.md) that 
 contains the application state. In our case, it only has one property, `name`,
-which starts off as a [string](../ch1/primitives.md#string) `'World'`.
+which starts off as a [string](../lvl1/primitives.md#string) `'World'`.
 
-A custom [tag](../ch2/tags.md), `App`, contains the `render` method that
+A custom [tag](../lvl2/tags.md), `App`, contains the `render` method that
 renders the application. The special `<self>` tag stands for the DOM element
 for the custom tag itself, and tags below it represent the child elements.
 The string `"Hello, {data:name}"` uses interpolation to insert the value of

@@ -2,45 +2,48 @@ site_name: Imba guide
 site_author: Hajime Yamasaki Vukelic
 copyright: (C)2018 by Hajime Yamasaki Vukelic. Some rights reserved.
 nav:
-  - Introductory chapter:
+  - Level 0 - Intro:
     - index.md
-    - ch0/about.md
-    - ch0/sample.md
-    - ch0/structure.md
-    - ch0/tips.md
-    - ch0/javascript.md
-    - ch0/editors.md
-  - Chapter 1 - Language basics:
-    - ch1/index.md
-    - ch1/comments.md
-    - ch1/statements.md
-    - ch1/vars.md
-    - ch1/methods.md
-    - ch1/do.md
-    - ch1/primitives.md
-    - ch1/regexps.md
-    - ch1/arrays.md
-    - ch1/objects.md
-    - ch1/operators.md
-    - ch1/controls.md
-  - Chapter 2 - Advanced concepts:
-    - ch2/index.md
-    - ch2/modules.md
-    - ch2/classes.md
-    - ch2/tags.md
-    - ch2/async.md
-    - ch2/global.md
-    - ch2/listcomps.md
-  - Appendices:
-    - appendices/index.md
-    - appendices/setup.md
-    - appendices/migration.md
+    - lvl0/about.md
+    - lvl0/sample.md
+    - lvl0/structure.md
+    - lvl0/tips.md
+    - lvl0/javascript.md
+    - lvl0/editors.md
+  - Level 1 - Language basics:
+    - lvl1/index.md
+    - lvl1/comments.md
+    - lvl1/statements.md
+    - lvl1/operators.md
+    - lvl1/primitives.md
+    - lvl1/vars.md
+    - lvl1/objects.md
+    - lvl1/arrays.md
+    - lvl1/regexps.md
+    - lvl1/controls.md
+    - lvl1/methods.md
+    - lvl1/do.md
+  - Level 2 - Advanced concepts:
+    - lvl2/index.md
+    - lvl2/modules.md
+    - lvl2/classes.md
+    - lvl2/tags.md
+    - lvl2/async.md
+    - lvl2/global.md
+    - lvl2/listcomps.md
+  - Bonus:
+    - bonus/setup.md
+    - bonus/testing.md
+    - bonus/migration.md
+    - bonus/escapes.md
+    - bonus/memoized.md
 
 markdown_extensions:
   - codehilite:
       guess_lang: false
       linenums: true
   - admonition
+  - tables
   - toc:
       permalink: true
 

@@ -2,4 +2,5 @@
 IMBA PLAYGROUND
 ###
 
-console.log 'Hello world'
+var o = {}
+var n = 'x' of o
