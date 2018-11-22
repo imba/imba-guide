@@ -21,7 +21,12 @@ found in other languages.
 - Properties are accessed with `x:key`.
 - Methods are called with `x.key` (parentheses are optional even with no
   arguments).
-- `x[expr]` works like in JavaScript.
+- Property access on a potentially nullable object is done with `x?:key`.
+- Method call on a potentially nullable object is done with `x?:key`.
+- Computed member access `x[expr]` works like in JavaScript.
+- Can assign default value to properties with `x:key ?= y`.
+- Object properties can be iterated with `for key of obj` or 
+  `for key, val of obj`
 
 ## Object literals
 
@@ -143,6 +148,99 @@ var key = 'level'
 game[key]
 ```
 
+If a key does not exist on an object, there is no error. Instead, the accessed
+property will simply evaluate to `undefined`. Attempting to access properties
+on `undefined` or `null` *is* an error, however.
+
+Imba provides two operators to safely access properties on nullable objects (`undefined` and `null`):
+
+```imba
+var possiblyNull = null
+
+possiblyNull?:lives         # `null` (the value of the object itself)
+possiblyNull?.go 12, 33     # nothing happens
+```
+
+## Manipulating objects
+
+Properties can be added to objects at any time by simply assigning to them.
+
+```imba
+var nightShadow = {
+    type: 'skill'
+    magic: no
+    stealth: yes
+    effect: 'invisibility'
+}
+
+nightShadow:effectDuration = 2
+
+nightShadow:effectDuration  # 2
+```
+
+It is also possible to only assign the default value (that is, only assign a
+value to a property that does not exist or is nullable).
+
+```imba
+nightShadow:effectDuration ?= 4
+
+nightShadow:effectDuration  # still 2
+```
+
+To delete a property from an object, a `delete` operator can be used:
+
+```imba
+delete nightShadow:effectDuration
+
+nightShadow:effectDuration  # undefined
+```
+
+## Iterating over object properties
+
+We can iterate (loop) over object properties using the `for of` block.
+We can either iterate just the keys or both keys and values.
+
+```imba
+var dragon = {
+    health: 2000
+    damage: 500
+    hp: 240
+}
+
+for key of dragon
+    console.log key     # logs 'health', 'damage', 'hp'
+
+for key, val of dragon
+    dragon[key] = val - 100
+
+dragon:health   # 1900
+dragon:hp       # 140
+```
+
+In the next example, we will merge an object into another one by iterating
+over properties:
+
+```imba
+var snail = {
+    speed: 2
+    hp: 1
+}
+
+var poisonVomit = {
+    damage: 200
+    specialAbility: 'resist poison'
+}
+
+for key, val of poisonVomit
+    snail[key] = val
+
+snail:damage            # 200
+snail:specialAbility    # 'resist poison'
+```
+
+You can read more about the `for of` block in the [Control
+structures](./controls.md) section.
+
 ## Mutability and passing by reference
 
 Objects are mutable. This means that when they are passed to methods and do
@@ -173,6 +271,16 @@ In the example above, the player object was passed to the `hit` method, and
 was mutated (changed) within it. However, because it is the same object as
 the one defined outside the method, we are able to see the effects of the 
 mutation from outside the `hit` method. This is known as a 'side effect'.
+
+It is possible to prevent mutation of objects by using the `Object.freeze` 
+function. This locks the object so that any attempt to mutate it will result
+in an error.
+
+```imba
+Object.freeze player
+
+player:score += 100     # error
+```
 
 ## Object identity
 
