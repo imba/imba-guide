@@ -96,6 +96,12 @@ obtained using `Number:MAX_VALUE` constant. Normally this should be
 The largest integer that can be safely represented in JavaScript can be obtained
 using `Number:MAX_SAFE_INTEGER`. Normally, this should be 9007199254740991.
 
+**Useful methods and properties:**
+
+- [`.toFixed`](https://mzl.la/2OYJlKw)
+- [`.toLocaleString`](https://mzl.la/2OVTBDn)
+- [`Math` object](https://mzl.la/148HnQj)
+
 ### NaN (Not a Number)
 
 **typeof:** number
@@ -238,6 +244,23 @@ one.
 As with normal single- and double-quoted strings, embedding expressions only 
 works with the double-quoted variant.
 
+**Useful methods and properties:**
+
+- [.endsWith](https://mzl.la/2OZkYwC)
+- [.includes](https://mzl.la/2P0oZk7)
+- [.lastIndexOf](https://mzl.la/2OZjgLz)
+- [.padEnd](https://mzl.la/2OXcgif)
+- [.padStart](https://mzl.la/2OZuCPw)
+- [.repeat](https://mzl.la/2OZYkUP)
+- [.replace](https://mzl.la/2OZTmqU)
+- [.search](https://mzl.la/2OYD3uw)
+- [.split](https://mzl.la/2OXq4cx)
+- [.startsWith](https://mzl.la/2OYDMvK)
+- [.substring](https://mzl.la/2P3xY4o)
+- [.toLowerCase](https://mzl.la/2OZTyGE)
+- [.toUpperCase](https://mzl.la/2P3ywHu)
+- [.trim](https://mzl.la/2P1uBeh)
+
 ## Boolean
 
 **typeof:** boolean
@@ -264,6 +287,10 @@ The boolean values can be used in numeric operations as 1 (for `true`) and 0
 (for `false`). It is not recommended to do this too often as it makes the code
 harder to analyze most of the time.
 
+```imba
+['Nope', 'Right on!'][yes]
+# 'Right on!'
+```
 
 ## Undefined
 
@@ -314,4 +341,40 @@ Another important property of `null` value is that it compares equal to
 ```imba
 null === undefined  # no
 null == undefined   # yes
+```
+
+## Truthy and falsy values
+
+Even though Booleans are clear indication of truth, in general comparisons in
+Imba programs, they are not the only values that can be used as truth values.
+Imba values all fall under either 'truthy' or 'falsy' buckets. Truthy values 
+are treated the same as `true`, while falsy values are treated as `false`.
+
+The following values are falsy:
+
+- `undefined`
+- `null`
+- `0`
+- `''`
+- `NaN`
+
+All other values, primitive or otherwise, are truthy.
+
+To convert any value to real boolean based on their 'truthyness', we can 
+simply use double-negation.
+
+```imba
+var aFalsy = 0
+var aTruthy = "I'm so true!"
+
+not not aFalsy      # no
+not not aTruthy     # yes
+```
+
+Since the double negation is a bit long written with `not not`, we can also 
+use the short negation operator `!` twice.
+
+```imba
+!!aFalsy      # no
+!!aTruthy     # yes
 ```
