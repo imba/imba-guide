@@ -239,7 +239,7 @@ snail:specialAbility    # 'resist poison'
 ```
 
 You can read more about the `for of` block in the [Control
-structures](./controls.md) section.
+structures](./controls.md#the-for-loop) section.
 
 ## Mutability and passing by reference
 

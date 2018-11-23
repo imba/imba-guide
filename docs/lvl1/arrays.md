@@ -112,7 +112,7 @@ colorIndex:red    # 2
 ```
 
 You can read more about the `for in` block in the [Control
-structures](./controls.md) section.
+structures](./controls.md#the-for-loop) section.
 
 ## Manipulating arrays
 
