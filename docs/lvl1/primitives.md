@@ -246,20 +246,20 @@ works with the double-quoted variant.
 
 **Useful methods and properties:**
 
-- [.endsWith](https://mzl.la/2OZkYwC)
-- [.includes](https://mzl.la/2P0oZk7)
-- [.lastIndexOf](https://mzl.la/2OZjgLz)
-- [.padEnd](https://mzl.la/2OXcgif)
-- [.padStart](https://mzl.la/2OZuCPw)
-- [.repeat](https://mzl.la/2OZYkUP)
-- [.replace](https://mzl.la/2OZTmqU)
-- [.search](https://mzl.la/2OYD3uw)
-- [.split](https://mzl.la/2OXq4cx)
-- [.startsWith](https://mzl.la/2OYDMvK)
-- [.substring](https://mzl.la/2P3xY4o)
-- [.toLowerCase](https://mzl.la/2OZTyGE)
-- [.toUpperCase](https://mzl.la/2P3ywHu)
-- [.trim](https://mzl.la/2P1uBeh)
+- [`.endsWith`](https://mzl.la/2OZkYwC)
+- [`.includes`](https://mzl.la/2P0oZk7)
+- [`.lastIndexOf`](https://mzl.la/2OZjgLz)
+- [`.padEnd`](https://mzl.la/2OXcgif)
+- [`.padStart`](https://mzl.la/2OZuCPw)
+- [`.repeat`](https://mzl.la/2OZYkUP)
+- [`.replace`](https://mzl.la/2OZTmqU)
+- [`.search`](https://mzl.la/2OYD3uw)
+- [`.split`](https://mzl.la/2OXq4cx)
+- [`.startsWith`](https://mzl.la/2OYDMvK)
+- [`.substring`](https://mzl.la/2P3xY4o)
+- [`.toLowerCase`](https://mzl.la/2OZTyGE)
+- [`.toUpperCase`](https://mzl.la/2P3ywHu)
+- [`.trim`](https://mzl.la/2P1uBeh)
 
 ## Boolean
 
