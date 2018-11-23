@@ -21,8 +21,10 @@
   "author": "Hajime Yamasaki Vukelic",
   "license": "MIT",
   "devDependencies": {
-    "imba": "1.4",
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "imba": "^1.4.1"
   }
 }

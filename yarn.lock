@@ -1019,9 +1019,9 @@ ignore-walk@^3.0.1:
   dependencies:
     minimatch "^3.0.4"
 
-imba@1.4:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/imba/-/imba-1.4.0.tgz#10db820b992ddb489acc23c157bfeffc2449f134"
+imba@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/imba/-/imba-1.4.1.tgz#8ae39e5d64be1ecbe192edad31a8fb539434d38d"
 
 import-local@^2.0.0:
   version "2.0.0"
