@@ -62,7 +62,7 @@ typeof 1  # 'number'
 For each type discussed in this section, we will also include the expected 
 result of using `typeof` with the value.
 
-Also see [Alternative type detection](../bonus/typedef.md) for a more advanced
+Also see [Alternative type detection](../bonus/typedet.md) for a more advanced
 and generally not extremely useful approach.
 
 ## Number
@@ -213,7 +213,7 @@ Here is a list of common escape sequences:
 - `\\` - backspace itself
 
 A full list of recognized escape sequences can be found in an
-[appendix](../appendices/escapes.md).
+[appendix](../bonus/escapes.md).
 
 Imba also has a syntax for multi-line strings. These are strings where 
 whitespace characters do not have to be explicitly escaped.

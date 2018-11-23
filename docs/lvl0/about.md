@@ -15,7 +15,7 @@ an optimal platform for front end development.
 
 Even though the speed was not one of the original goals, the implementation
 of the Imba's DOM reconciler, also known as ['memoized
-DOM'](../appendices/memoized.md), has stood the test of time, and is, to date,
+DOM'](../bonus/memoized.md), has stood the test of time, and is, to date,
 one of the fastest implementations of DOM reconciler on the market.
 
 ## About the name

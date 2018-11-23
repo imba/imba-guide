@@ -37,4 +37,5 @@ If you wish to follow along, we recommend you hop on
 [Scrimba.com](https://scrimba.com/), an online sandbox/screencast service
 written in Imba. You can also use the playground found in this guide's git repository. Instructions for getting started with the playground are in the `README.md` file.
 
-We will cover setting up Imba projects from scratch in [one of the appendices](./appendices/setup.md).
+We will cover setting up Imba projects from scratch in [one of the bonus
+sections](./bonus/setup.md).
