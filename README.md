@@ -1,6 +1,6 @@
 # Imba guide
 
-This is a short guide to the [Imba](http://imba.io/) language and web 
+This is a quick guide to the [Imba](http://imba.io/) language and web 
 development platform.
 
 Imba is a general purpose programming language that compiles to JavaScript and 
@@ -46,7 +46,8 @@ The compiled JavaScript will appear in `dist/client.js`.
 ## Directory structure
 
 - `docs/` - documentation source (`index.md` is the starting point)
-- `build/` - generated HTML for the documentation (appears after running `make`)
+- `build/` - generated HTML for the documentation (appears after running 
+  `npm run build:docs`)
 - `code/` - playground code
 - `dist/` - compiled JavaScript for the playground
 
