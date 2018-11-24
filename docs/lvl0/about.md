@@ -1,7 +1,8 @@
 # About Imba
 
 Imba is a dynamically typed multi-paradigm object-based language which
-transpiles to performant JavaScript. 
+transpiles to performant JavaScript. Its design is well suited for both fun
+and profit.
 
 ## Features
 
