@@ -181,6 +181,36 @@ var normalGreeting = bang 'Hello', '.'
 In the example, `excessiveGreeting` will be `'Hello!'`, because the second 
 value is omitted.
 
+## Callback parameter
+
+Methods can declare their last parameter explicitly as a callback using the
+`&` prefix.
+
+```imba
+def saveGame filename, overwrite = no, &callback
+    if overwrite is no and fileExists filename
+        callback 'error'
+    writeFile filename, gameState
+    callback()
+```
+
+With the `callback` parameter defined with the `&` parameter, when a [do
+block](./do.md) or a method is passed to `saveGame`, it will know to bind the
+last argument correctly to the `callback` parameter even if `overwrite` is
+skipped.
+
+```imba
+saveGame '001.sav', do |error|
+    if error
+        showError
+```
+
+Without the `&` prefix, the second argument would be treated as the
+`overwrite` argument.
+
+This callback parameter only has an effect when there are optional
+parameters.
+
 ## Rest parameters
 
 Methods can be declared with rest parameters which capture any parameters
@@ -288,6 +318,65 @@ anywhere so the method was called unbound (it's invocation context was
     Also read about [`.bind`](https://mzl.la/2P0iy0o),
     [`.call`](https://mzl.la/2P3aQD7) and [`.apply`](https://mzl.la/2P0ivSg)
     methods for different ways to control the invocation context.
+
+## Declaring methods within methods
+
+Methods can be declared anywhere, including inside other methods. However,
+declaring a method within another method can be a bit tricky to wrap one's 
+head around.
+
+The important thing to remember is that a method is declared as a property on
+`self`. Consider this example.
+
+```imba
+def outer
+    def inner
+       'Hello from inner'
+
+var x = outer
+var y = inner
+```
+
+The outer method, when called, defines the inner method. Since 
+`def inner` is the last statement in `outer`, that is also its return value.
+Therefore, `x` is the `inner` method. Inside the `outer` method, `self` is 
+the same `self` on which `outer` itself is defined. Because of this, `inner` 
+is also defined on the same `self`. In other words, `self` now looks like
+this:
+
+```imba
+var self = {
+    def outer
+        def inner
+            console.log 'Hello from inner'
+
+    def inner
+        console.log 'Hello from inner'
+}
+```
+
+The way to think about this is that `outer` is a method that creates the 
+`inner`.
+
+We are now able to call `inner` just by referencing `inner`, so the value of
+`y` is `'Hello from inner'`.
+
+If we take this one step further, it means that `outer` can also *redefine*
+`inner` if it is *already defined*. Let's take a look at a modified example:
+
+```inner
+def inner
+    'I was here first'
+
+def outer
+    def inner
+       'No, I was here first!'
+
+outer
+var whoWasFirst = inner
+```
+
+The value of `whoWasFirst` is `'No, I was here first!'`.
 
 ## Method type
 
