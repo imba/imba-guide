@@ -179,7 +179,21 @@ var normalGreeting = bang 'Hello', '.'
 ```
 
 In the example, `excessiveGreeting` will be `'Hello!'`, because the second 
-value is omitted 
+value is omitted.
+
+## Rest parameters
+
+Methods can be declared with rest parameters which capture any parameters
+that are not explicitly declared. The rest parameter is declared using a `*`
+followed by the name given to an array of captured parameters.
+
+```imba
+def equip player, *weapons
+    for weapon in weapons
+        player.equal weapon
+
+equip player, 'sword', 'laser gun', 'onion'
+```
 
 ## Referencing methods as objects
 
