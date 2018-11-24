@@ -1,7 +1,8 @@
 # Control structures - if, try, for, while, until
 
-Control structures allow branching and repeating execution of code. Imba has
-several different control structures.
+Control structures control the flow of execution by providing mechanism for
+branching and repeating execution of code. Imba has several different control
+structures.
 
 - `if` blocks control branching
 - `try` blocks handle exceptions
@@ -10,6 +11,7 @@ several different control structures.
 ## Cheats
 
 - Imba has the `if`, `try`, `while`, `until` and `for` blocks.
+- All blocks are expressions which can be assigned and passed around.
 - There are no parentheses around conditions.
 - There is no punctuation in blocks (e.g., `if x`).
 - `if` block can have `else if` and `else` branches.
@@ -17,6 +19,8 @@ several different control structures.
 - `for`, `white`, `until` can `break` and `continue`.
 - `for x in arr` or `for x, idx in arr` to loop over arrays.
 - `for key of obj` or `for key, val of obj` to loop over object properties.
+- There is no `for i; i < j; i++` version of `for` loop in Imba.
+- `catch` is optional in `try` block.
 
 ## The `if` block
 
@@ -31,67 +35,65 @@ of the control blocks found in this section (yes, `if` block itself, too!).
 For example:
 
 ```imba
-var x = -2
+var lives = 0
 
-if x < 0
-    x = -x  # we only reach this part of the code if `x` is less than 0
+if lives is 0
+    'You are dead'
 ```
 
 We can also specify what happens in the other case:
 
 ```imba
-var x = -2
+var lives = 3
 
-if x < 0
-    x = -x + 1
+if lives is 0
+    'You are dead'
 else
-    x = x + 1
+    lives -= 1
+    "You have {lives} more lives"
 ```
-
-In the last example, we repeat `+ 1` twice. Since the `if` block is an 
-expression, we can simplify this:
-
-```imba
-var x = -2
-
-x = (
-    if x < 0
-        -x
-    else
-        x
-) + 1
-```
-
-We have wrapped the entire `if` block in parentheses to separate and added `1`
-to it. Newline isn't really required after the opening parenthesis, but we've
-added it to make the code a bit more readable.
-
-There is an even shorter way to write the last example:
-
-```imba
-var x = -2
-
-x = (if x < 0 then -x else x) + 1
-```
-
-Notice the inclusion of the `then` keyword.
-
-Although the last example does look like an `if` block, it's not a block but a
-ternary expression.
 
 The `if` block is not restricted to just `if` and `else` branches. One or
 more additional conditions can be specified as `else if` branches. For
 example:
 
 ```imba
-var x = -2
+var lives = 3
 
-if x < 0
-    x = -x
-else if x === 0
-    x = 1
+if lives is 0
+    'You are dead'
+else if lives is 1
+    lives -= 1
+    'You are mine next time!'
 else
-    x = x * 2
+    lives -= 1
+    "You have {lives} more lives".
+```
+
+If blocks can be assigned to variables.
+
+```imba
+var lives = 3
+
+var x = if lives is 0
+    'You are dead'
+else
+    lives -= 1
+    "You have {lives} more lives"
+
+x
+# "You have 2 more lives"
+```
+
+### Ternary expression
+
+In some cases, we can write the `if` block as a ternary expression to save
+space. Ternary expression is not technically a control structure, but we will
+mention it here because we don't have a better things to do anyway.
+
+```imba
+var lives = 3
+var isDead = if lives is 0 then yes else no
 ```
 
 The `else if` branches cannot be used in ternary expressions.
@@ -106,9 +108,188 @@ somewhere on the path, it will eventually reach the JavaScript engine itself,
 and be treated as an 'uncaught' exception. (This is usually going to show up
 as a traceback in the developer console or in the terminal.)
 
-We can use exceptions either to manage error conditions, or to send messages
-through our application by (ab)using the fact that exception will travel
-until caught. Here we will not dwell too much on how exceptions are used, but 
-instead simply look at how `try` blocks are used to deal with them.
+```imba
+def foogGun
+    throw Error 'bug!'
 
+try
+    footGun
+catch e
+    console.log "That was close! Let's do it again!"
+```
 
+The `e` variable in the `catch` branch is the error object that was thrown by
+the `footGun` method.
+
+Note that the `catch` branch is *optional*. If we simply wish to suppress an
+exception without doing anything, we can completely omit it.
+
+```imba
+try
+    fooGun
+# Look, mom, no catch!
+```
+
+Like `if` blocks, the `try` block can be assigned 
+
+```imba
+var afermath = try
+    footGun
+catch e
+    'Feeling exceptionally good!'
+```
+
+## The `while` loop
+
+The `while` loop is the simplest control structure for repeating blocks of 
+code. It repeats the block while some condition is met, hence the name.
+
+```imba
+var bullets = 1000
+
+white bullets > 0
+    bullets--
+```
+
+Other than letting the while loop run until the condition no longer applies,
+we can also end it prematurely by using the `break` or `return` statements. 
+
+```imba
+var count = 0
+
+while yes  # yes is always yes, so this will loop indefinitely
+    count++
+    break
+
+count
+# 1
+```
+
+The `return` statement can only be used inside methods or `do` blocks as it
+doesn't really terminate the while loop, but returns from the method or `do`
+block completely.
+
+While looping inside a `while` loop, we can use `continue` to skip the rest 
+of the block. It's basically like jumping back to the top of the block.
+
+```imba
+var evenNumbers = []
+var i = 0
+
+while i++ < 200
+    if i % 2
+        continue
+    evenNumbers.push i
+```
+
+## The `until` loop
+
+The `until` loop is similar to the `while` loop, with a reverse condition: it
+will stop only once the condition is met. It is just a shorter way to say
+`while not condition`.
+
+```imba
+var baloons = [1, 2, 3, 4, 5]
+
+until baloons:length is 0
+    baloons.pop
+```
+
+We can use `break`, `return` and `continue` inside `until` just like in the
+`while` loops.
+
+## The `for` loop
+
+Whereas the `while` and `until` loops are more generic, `for` loop is used
+specifically for iterating over array members and object properties.
+
+There are two variants of `for` loops:
+
+- `for ... in` for arrays, strings, and array-like objects.
+- `for ... of` for object properties.
+
+The `for ... in` loop is used like this.
+
+```imba
+var colorIndex = {
+    R: '#ff0000'
+    G: '#00ff00'
+    B: '#0000ff'
+    C: '#00ffff'
+    M: '#ff00ff'
+    Y: '#ffff00'
+}
+
+var colorSequence = ['R', 'M', 'R', 'G', 'B', 'C', 'M']
+var colors = []
+
+for colorKey in colorSequence
+    colors.push colorIndex[colorKey]
+```
+
+For loops are actually arrays, and they can be assigned and passed. In the
+previous example we kept pushing into the `colors` array. This can be written 
+simply like so:
+
+```imba
+var colors = for colorKey in colorSequence
+    colorIndex[colorKey]
+```
+
+In `for` loops, we can also access the the indices of members we are iterating
+over.
+
+```imba
+var colors = for colorKey, index in colorSequence
+    intensity: (index + 1) * 100
+    color: colorIndex[colorKey]
+```
+
+The `for ... of` loop is used for objects. In it's simpler form, `for ... of` 
+iterates over the keys.
+
+```imba
+var colorIndex = {
+    R: '#ff0000'
+    G: '#00ff00'
+    B: '#0000ff'
+    C: '#00ffff'
+    M: '#ff00ff'
+    Y: '#ffff00'
+}
+
+var allColors = for key of colorIndex
+    key
+```
+
+We can also use `for ... of` to iterate over both keys and values.
+
+```imba
+var reverseIndex = {}
+
+for key, val of colorIndex
+    reverseIndex[val] = key
+```
+
+Just like the `while` loop, we can use `break`, `return` and `continue` to
+terminate the loop or skip iterations.
+
+```imba
+var player = [
+    {name: 'OP', dmg: 400, hp: 100}
+    {name: 'Nuclear', dmg: 300, hp: 200}
+    {name: 'Voe': dmg: 280, hp: 210}
+    {name: 'Polygon', dmg: 220, hp: 180}
+    {name: 'Glitter', dmg: 440, hp: 120}
+    {name: 'Vanilla J', dmg: 300, hp: 50}
+]
+
+var strongPlayers = for player in players
+    if player:dmg < 300
+        continue
+    else
+        player:name
+
+strongPlayers
+# ['OP', 'Glitter', 'Vanilla J']
+```
