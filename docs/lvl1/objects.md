@@ -100,7 +100,7 @@ startGame level: level2, player: player
     Please note that, unlike JavaScript, there is no shorthand for the cases
     where keys have the same name as a variable that is used as the value.
 
-Properties on objects can be methods or functions (including `do` blocks).
+Properties on objects can be methods or functions (including do blocks).
 
 ```imba
 var game = {

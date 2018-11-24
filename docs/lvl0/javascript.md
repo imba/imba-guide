@@ -61,8 +61,8 @@ def div x, y
 ### `self` and `this`
 
 Both `self` and `this` are available in classes. The `self` is always bound to
-the current object, even inside `do` blocks inside methods. If you define a 
-method inside a method, however, `self` is bound to `this` inside the method, 
+the current object, even inside do blocks inside methods. If you define a
+method inside a method, however, `self` is bound to `this` inside the method,
 which usually has no meaning.
 
 ```imba
@@ -112,7 +112,7 @@ expect, we'll first lay down some guidelines, and then discuss what won't work.
 - In methods in [classes](../lvl2/classes.md) and [tags](../lvl2/tags.md), only
   reference undeclared names for properties (props) and methods that are
   declared (or the special `data` property in tags).
-- Do not define methods inside methods. Use `do` blocks instead.
+- Do not define methods inside methods. Use do blocks instead.
 - Prefix global functions and properties with `window` (or `global` on NodeJS).
 - Always declare variables before using them (do not rely on hoisting behavior).
 
@@ -393,7 +393,7 @@ def collectChildren parent, *children
     children.forEach parent:registerChild
 ```
 
-## Passing `do` blocks to functions
+## Passing do blocks to functions
 
 If you have a method that takes a function as one of its arguments, you may have 
 tried something like this and got a compile error:
@@ -404,13 +404,13 @@ someMethod do |x| x + 1, someOtherArg
 
 There are several solutions to this. 
 
-(1) You can wrap the `do` block in parentheses:
+(1) You can wrap the do block in parentheses:
 
 ```imba
 someMethod (do |x| x + 1), someOtherArg
 ```
 
-(2) You could also assign the `do` block to a temporary variable:
+(2) You could also assign the do block to a temporary variable:
 
 ```imba
 var inc = do |x| x + 1
@@ -427,7 +427,7 @@ Note that the `&` placeholder is replaced at compile time so there is no
 run-time performance penalty for using it.
 
 The author of this guide recommends the second solution, as it gives you an 
-opportunity to clarify the purpose of the `do` block by giving it a name and 
+opportunity to clarify the purpose of the do block by giving it a name and 
 it looks least surprising of the three.
 
 When writing methods of your own, you should generally try to take functions

@@ -165,8 +165,8 @@ count
 # 1
 ```
 
-The `return` statement can only be used inside methods or `do` blocks as it
-doesn't really terminate the while loop, but returns from the method or `do`
+The `return` statement can only be used inside methods or do blocks as it
+doesn't really terminate the while loop, but returns from the method or do
 block completely.
 
 While looping inside a `while` loop, we can use `continue` to skip the rest 

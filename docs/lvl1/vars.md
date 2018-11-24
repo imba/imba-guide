@@ -50,13 +50,13 @@ var 1foo              # ERROR!
 
 ## Variable visibility (scope)
 
-Variables are only visible within, [methods](./methods.md) and [`do`
-blocks](./do.md) inside which they are declared. Variables declared outside any 
-method and `do` block are visible to the entire module. 
+Variables are only visible within, [methods](./methods.md) and [do
+blocks](./do.md) inside which they are declared. Variables declared outside
+any method and do block are visible to the entire module.
 
 Variables are visible from any line below their declaration, including any
 methods, classes, tags and blocks that come after it, but this visibility
-does not extend past the end of the body of the method or `do` block, or
+does not extend past the end of the body of the method or do block, or
 outside the module.
 
 ```imba
@@ -64,8 +64,8 @@ var x = 12            # `x` is visible from all lines below this one
 
 def foo y             # `y` is visible only inside the `foo` method
     var z             # `z` is visible only inside the `foo` method
-    z = do |n|        # `n` is visible only inside the `do` block
-        var f = 12    # `f` is visible only inside the `do` block
+    z = do |n|        # `n` is visible only inside the do block
+        var f = 12    # `f` is visible only inside the do block
         f + y / n
     z 2
 
