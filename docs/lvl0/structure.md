@@ -22,6 +22,13 @@ experienced programmers.
 
 ## Conventions
 
+### Strict
+
+Imba, by default, does not compile with `use strict`. The code examples in 
+this guide will assume `use strict`. If you don't know what this means, always
+be sure to have `"use strict"` as the first line in your Imba files. You can 
+read more about the strict mode [on MDN](https://mzl.la/2P35qaW).
+
 ### The global object
 
 In code snippets, we will use `window` as the global object. Keep in mind that
