@@ -2,12 +2,14 @@
 
 This is a quick guide for Imba v1.4, which focuses on the language itself.
 
-One of the most notable features is the built-in fast DOM reconciler, which
-allows Imba developers to easily create performant web applications. The
-performance of the DOM reconciler is so good, in fact, that Imba is... well,
-[imba](bit.ly/imba_def). If you are not into gaming, it means that Imba opens
-the doors to architectural patterns that are not practical in many of the
-today's popular frameworks and libraries.
+Imba is not just a programming language. It's a programming language
+optimized for the web. One of Imba's most notable features is the built-in
+web application framework with a fast DOM reconciler called the Memoized DOM.
+This allows Imba developers to easily create performant web applications in a
+fun and natural way. The performance of the Memoized DOM is so good, in fact,
+that Imba is... well, [imba](bit.ly/imba_def). If you are not into gaming, it
+means that Imba opens the doors to architectural patterns that are not
+practical in many of the today's popular frameworks and libraries.
 
 This guide is designed to get you up to speed having fun with Imba.
 
