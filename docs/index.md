@@ -56,7 +56,13 @@ guide.
 
 If you wish to follow along, we recommend you hop on 
 [Scrimba.com](https://scrimba.com/), an online sandbox/screencast service
-written in Imba. You can also use the playground found in this guide's git repository. Instructions for getting started with the playground are in the `README.md` file.
+written in Imba. You can also use the playground found in this guide's git
+repository. Instructions for getting started with the playground are in the
+`README.md` file.
+
+!!! note
+    In Scrimba, pressing `Cmd+J` or `Ctrl+J` when some Imba code is selected
+    will give you a compiled version of the code.
 
 We will cover setting up Imba projects from scratch in [one of the bonus
 sections](./bonus/setup.md).
