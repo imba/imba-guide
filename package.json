@@ -7,7 +7,8 @@
     "watch": "webpack --watch",
     "watch:docs": "mkdocs serve",
     "build": "webpack",
-    "build:docs": "mkdocs build"
+    "build:docs": "mkdocs build",
+    "start": "webpack-dev-server --open"
   },
   "keywords": [
     "Imba",
@@ -21,8 +22,10 @@
   "author": "Hajime Yamasaki Vukelic",
   "license": "MIT",
   "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.25.1",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
     "imba": "^1.4.1"

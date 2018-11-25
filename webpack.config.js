@@ -1,4 +1,5 @@
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -18,5 +19,10 @@ module.exports = {
   resolve: {
     extensions: ['.imba', '.js']
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Imba playground'
+    })
+  ],
   devtool: false,
 }
