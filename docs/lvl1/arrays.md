@@ -181,7 +181,7 @@ for cls in classes
 - [`.every`](https://mzl.la/2OZTeYv)
 - [`.fill`](https://mzl.la/2OYwVmc)
 - [`.filter`](https://mzl.la/2P1uQ90)
-- [`.find](https://mzl.la/2OYD69N)
+- [`.find`](https://mzl.la/2OYD69N)
 - [`.findIndex`](https://mzl.la/2OZDBR0)
 - [`.forEach`](https://mzl.la/2OYL0Qg)
 - [`.includes`](https://mzl.la/2OVZXTq)
