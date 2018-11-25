@@ -41,11 +41,9 @@ documentation.
 **If you are coming from JavaScript**, you may still want to read
 through this guide as a refresher for some of the concepts. Or you may simply
 skip from one code snippet to another, and only read the surrounding text if
-the code looks unfamiliar. You will also find [a
-section](./lvl0/javascript.md) on tips and gotchas for JavaScript developers,
-that cover some of the common pitfalls. We have also prepared a list of
-cheats in each section that will cover the differences and similarities
-between Imba and JavaScript.
+the code looks unfamiliar. We have prepared a list of **Cheats** in each
+section that will cover the differences and similarities between Imba and
+JavaScript.
 
 ## How to use this guide
 
