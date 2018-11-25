@@ -28,7 +28,7 @@ Install the dependencies for the playground:
 To build the documentation, go to the project directory and run 
 `npm run build:docs`.
 
-The compiled documentation should be present in `build/html/index.html`. Open 
+The compiled documentation should be present in `site/index.html`. Open 
 that file in your browser.
 
 You can also read the source Markdown files [directly](docs/index.md).
@@ -39,9 +39,14 @@ The playground is a simple Imba module that is set up to compile using Webpack.
 The idea is to open the compiled code and the source side-by-side and compare
 the source to the output.
 
-To start the automatic compilation, run `npm run watch`.
+To start the automatic compilation, run `npm run watch`. The compiled
+JavaScript will appear in `dist/client.js`.
 
-The compiled JavaScript will appear in `dist/client.js`.
+To start the development web server, run: `npm run start`. 
+
+**NOTE:** The development server will not compile your playground code into
+`dist/client.js`, so if you wish to keep track of the compiler output, you
+should run both `watch` and `start` scripts
 
 ## Directory structure
 
