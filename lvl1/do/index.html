@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Hajime Yamasaki Vukelic">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Do block - Imba guide</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Do block";
+    var mkdocs_page_input_path = "lvl1\\do.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Imba guide</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 0 - Intro</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../..">Imba guide</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/about/">About Imba</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/sample/">"Hello, World" example</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/structure/">Guide structure and conventions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/tips/">Tips and tricks for beginners</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/editors/">Setting up your editor</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 1 - Language basics</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../">Language basics</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../comments/">Comments</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../statements/">Statements and expressions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../operators/">Operators</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../primitives/">Primitive types</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../vars/">Variables and variable scope</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../objects/">Objects</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../arrays/">Arrays</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../regexps/">Regular expressions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../controls/">Control structures - if, try, for, while, until</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../methods/">Methods</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Do block</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#do-block">Do block</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#cheats">Cheats</a></li>
+        
+            <li><a class="toctree-l4" href="#writing-do-blocks">Writing do blocks</a></li>
+        
+            <li><a class="toctree-l4" href="#using-do-blocks-as-callbacks">Using do blocks as callbacks</a></li>
+        
+            <li><a class="toctree-l4" href="#using-placeholder">Using &amp; placeholder</a></li>
+        
+            <li><a class="toctree-l4" href="#using-do-blocks-to-write-higher-order-methods">Using do blocks to write higher order methods</a></li>
+        
+            <li><a class="toctree-l4" href="#do-blocks-and-self">Do blocks and self</a></li>
+        
+            <li><a class="toctree-l4" href="#function-declarations">Function declarations</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 2 - Advanced concepts</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lvl2/">Advanced concepts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/modules/">Modules</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/classes/">Classes</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/tags/">Tags</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/async/">Async</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/global/">Global</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/listcomps/">Listcomps</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Bonus</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../bonus/setup/">Setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/testing/">Testing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/migration/">Migration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/escapes/">Escape sequences</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/memoized/">Memoized DOM</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/typedet/">Alternative type detection</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Imba guide</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Level 1 - Language basics &raquo;</li>
+        
+      
+    
+    <li>Do block</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="do-block">Do block<a class="headerlink" href="#do-block" title="Permanent link">&para;</a></h1>
+<p>Do blocks are ad-hoc methods. They are similar to methods in that they 
+represent parametrized blocks of code. Unlike methods, do blocks are 
+expressions, so they are treated as values rather than declarations. On their
+own, they do not have a name we can refer to, nor means of invoking them.</p>
+<p>In other languages, do blocks appear under names like 'function expression'
+or 'lambda'.</p>
+<p>Do blocks are usually used when a function or a method needs a function or a
+method as an argument.</p>
+<h2 id="cheats">Cheats<a class="headerlink" href="#cheats" title="Permanent link">&para;</a></h2>
+<ul>
+<li>do blocks compile to function expressions in JavaScript.</li>
+<li>The do block syntax is <code>do |x, y, z| body</code>.</li>
+<li>Parameters delimited by bars <code>| |</code> are optional.</li>
+<li>The body can be one line or multiple lines.</li>
+<li><code>self</code> inside a do block refers to the <code>self</code> in the outer scope.</li>
+<li><code>this</code> inside a do block is a normal <code>this</code>.</li>
+<li>Named function declarations are written similarly to methods, but with 
+  <code>var def</code> instead of <code>def</code>.</li>
+</ul>
+<h2 id="writing-do-blocks">Writing do blocks<a class="headerlink" href="#writing-do-blocks" title="Permanent link">&para;</a></h2>
+<p>The syntax of the do block looks very different compared to methods, but the 
+basic structure is the same.</p>
+<p>Here is a method:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>def add x, y
+    x + y
+</pre></div>
+</td></tr></table>
+
+<p>Here is an equivalent do block:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var add = do |x, y| x + y
+</pre></div>
+</td></tr></table>
+
+<p>Do blocks have all the features that <a href="../methods/">methods</a> do, like
+optional and rest parameters.</p>
+<h2 id="using-do-blocks-as-callbacks">Using do blocks as callbacks<a class="headerlink" href="#using-do-blocks-as-callbacks" title="Permanent link">&para;</a></h2>
+<p>Do blocks are most commonly used as callbacks in methods and functions. While
+declared methods or imported functions can also be used as callbacks, do
+blocks have an advantage of being ad-hoc. They can be defined on the spot as
+one-off callbacks.</p>
+<p>Here is an example of using a method as a callback:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>def afterSave assets
+    game.start assets, config
+
+loadAssets self:afterSave
+</pre></div>
+</td></tr></table>
+
+<p>If we rewrite the above using a do block it looks like this:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>loadAssets do |assets| game.start assets, config
+</pre></div>
+</td></tr></table>
+
+<h2 id="using-placeholder">Using &amp; placeholder<a class="headerlink" href="#using-placeholder" title="Permanent link">&para;</a></h2>
+<p>In some cases callbacks are not conveniently the last parameter. The
+<code>setTimeout</code> and <code>setInterval</code> built-in functions are good examples.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>setInterval do
+    gameTimer.update Date.now
+, 100
+</pre></div>
+</td></tr></table>
+
+<p>The <code>&amp;</code> character can be used as a placeholder in such cases, to allow us to 
+supply the callback last. This requires parentheses around all parameters.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>setInterval(&amp;, 100) do gameTimer.update Date.now
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you come from a functional programming background, this may look like
+partial application. During compilation, Imba actually replaces the
+placeholder with the callback in the resulting code so it's not doing any
+partial application, and there is no penalty for using this syntax.</p>
+</div>
+<h2 id="using-do-blocks-to-write-higher-order-methods">Using do blocks to write higher order methods<a class="headerlink" href="#using-do-blocks-to-write-higher-order-methods" title="Permanent link">&para;</a></h2>
+<p>Higher order functions are functions that take functions as arguments or
+return them. We have already seen an example of a higher order function
+that take other functions as arguments in the <code>setInterval</code> example in this
+section, where we use a do block as an argument. </p>
+<p>Do blocks can also be very useful when we want to write methods that are
+higher order functions (a.k.a. higher order methods). Because declaring a 
+method also creates a property on the <code>self</code> object, declaring new methods 
+<a href="../methods/#declaring-methods-within-methods">inside other methods</a> may
+sometimes yield unexpected results, and can create properties we don't really
+need. Because of this, it is usually preferred to use do blocks instead.</p>
+<p>Consider the following method.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>def drawShape screen, shape
+    screen.save
+    screen.draw shape
+    screen.restore
+
+drawShape screen, triangle
+drawShape screen, rectangle
+drawShape screen, machoDudeWithTagsAsArms
+</pre></div>
+</td></tr></table>
+
+<p>If we use this method throughout our program, and there is only one <code>screen</code>
+that we draw to, it may seem like a bad idea to keep supplying <code>screen</code>
+object every time we call <code>drawShape</code>. We can solve this by converting the 
+<code>drawShape</code> into a higher order method:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>def drawShape screen
+    do |shape|
+        screen.save
+        screen.draw shape
+        screen.restore
+
+var drawToScreen = drawShape screen
+
+drawToScreen triangle
+drawToScreen rectangle
+drawToScreen machoDudeWithTagsAsArms
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The technique in the last example is called
+<a href="https://en.wikipedia.org/wiki/Currying">currying</a>.</p>
+</div>
+<h2 id="do-blocks-and-self">Do blocks and <code>self</code><a class="headerlink" href="#do-blocks-and-self" title="Permanent link">&para;</a></h2>
+<p>The <code>self</code> object inside a do block always refers to the <code>self</code> in the outer 
+scope.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>def keyHandlerFor code
+    # ....
+
+def attachEventHandler target
+    target.addEventListener &#39;keydown&#39;, do |event|
+        var keyHandler = self.keyHandlerFor event.keyCode
+        keyHandler
+</pre></div>
+</td></tr></table>
+
+<p>In this example, the <code>self.keyHandler</code> refers to a method on the same <code>self</code>
+object on which <code>attachEventHandler</code> is declared.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You probably notice that we do not really need to use <code>self.</code> in the last
+example. It's just there to make it explicit and clear. Even if we omit
+<code>self.</code>, it makes no difference because Imba always treats undeclared
+names as methods on the <code>self</code> object.</p>
+</div>
+<h2 id="function-declarations">Function declarations<a class="headerlink" href="#function-declarations" title="Permanent link">&para;</a></h2>
+<p>In the very first example in this section, we have seen a do block that was
+assigned to a variable. This pattern can be written using <code>var def</code>
+declarations.</p>
+<p>Although <code>var def</code> declarations look similar to method declarations, they are
+semantically closer to do blocks.</p>
+<p>Let's take a look at the first example again:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var add = do |x, y| x + y
+</pre></div>
+</td></tr></table>
+
+<p>Here is a version that is rewritten using <code>var def</code>.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var def add x, y
+    x + y
+</pre></div>
+</td></tr></table>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Function declarations are <strong>not subject to hoisting</strong> in Imba even if it
+may seem so just looking at the compiler output. Calling a <code>var def</code>
+function above the point of declaration will cause the compiler to treat
+the reference as a method call on the <code>self</code> object.</p>
+</div>
+<p>The example of the <code>drawShape</code> higher order method can also be rewritten
+using function declarations:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>def drawShape screen
+    var def draw shape
+        screen.save
+        screen.draw shape
+        screen.restore
+</pre></div>
+</td></tr></table>
+
+<p>There is no practical difference between the original <code>drawShape</code> and this
+one in this particular case, but the main difference is that the inner
+function has a name, unlike do blocks. This is an important property when it
+comes to <a href="https://en.wikipedia.org/wiki/Recursion_(computer_science)">recursive
+functions</a>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../lvl2/" class="btn btn-neutral float-right" title="Advanced concepts">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../methods/" class="btn btn-neutral" title="Methods"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>(C)2018 by Hajime Yamasaki Vukelic. Some rights reserved.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../methods/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../lvl2/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

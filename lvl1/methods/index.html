@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Hajime Yamasaki Vukelic">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Methods - Imba guide</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Methods";
+    var mkdocs_page_input_path = "lvl1\\methods.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Imba guide</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 0 - Intro</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../..">Imba guide</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/about/">About Imba</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/sample/">"Hello, World" example</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/structure/">Guide structure and conventions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/tips/">Tips and tricks for beginners</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/editors/">Setting up your editor</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 1 - Language basics</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../">Language basics</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../comments/">Comments</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../statements/">Statements and expressions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../operators/">Operators</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../primitives/">Primitive types</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../vars/">Variables and variable scope</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../objects/">Objects</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../arrays/">Arrays</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../regexps/">Regular expressions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../controls/">Control structures - if, try, for, while, until</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Methods</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#methods">Methods</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#cheats">Cheats</a></li>
+        
+            <li><a class="toctree-l4" href="#basic-syntax">Basic syntax</a></li>
+        
+            <li><a class="toctree-l4" href="#method-parameters">Method parameters</a></li>
+        
+            <li><a class="toctree-l4" href="#method-return-value">Method return value</a></li>
+        
+            <li><a class="toctree-l4" href="#optional-parameters">Optional parameters</a></li>
+        
+            <li><a class="toctree-l4" href="#destructured-parameters">Destructured parameters</a></li>
+        
+            <li><a class="toctree-l4" href="#callback-parameter">Callback parameter</a></li>
+        
+            <li><a class="toctree-l4" href="#rest-parameters">Rest parameters</a></li>
+        
+            <li><a class="toctree-l4" href="#referencing-methods-as-objects">Referencing methods as objects</a></li>
+        
+            <li><a class="toctree-l4" href="#declaring-methods-in-object-literals">Declaring methods in object literals</a></li>
+        
+            <li><a class="toctree-l4" href="#declaring-methods-within-methods">Declaring methods within methods</a></li>
+        
+            <li><a class="toctree-l4" href="#method-type">Method type</a></li>
+        
+            <li><a class="toctree-l4" href="#useful-methods-and-properties">Useful methods and properties</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../do/">Do block</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 2 - Advanced concepts</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lvl2/">Advanced concepts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/modules/">Modules</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/classes/">Classes</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/tags/">Tags</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/async/">Async</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/global/">Global</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/listcomps/">Listcomps</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Bonus</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../bonus/setup/">Setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/testing/">Testing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/migration/">Migration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/escapes/">Escape sequences</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/memoized/">Memoized DOM</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/typedet/">Alternative type detection</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Imba guide</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Level 1 - Language basics &raquo;</li>
+        
+      
+    
+    <li>Methods</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h1>
+<p>Methods are reusable blocks of code that can be applied to its arguments.</p>
+<p>Methods are similar to mathematical functions, although they are not strictly
+the same thing. In other languages, Imba methods are known as 'functions',
+'procedures', and 'subroutines'. While these things may have slightly
+different meanings to different programmers, they all serve the same purpose.</p>
+<p>Methods are used to reduce duplication where similar or identical behavior is
+used in different parts of a program. They are identified by a name,
+parameters that serve as placeholders for arguments passed to them, and the 
+method body, which is the code that belongs to a method.</p>
+<p>The best way to think of methods is 'configurable named code blocks'. They
+can be configured using parameters, and they are packaged into a named method
+so you can easily refer to it by name without retyping the entire block again
+and again.</p>
+<h2 id="cheats">Cheats<a class="headerlink" href="#cheats" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Syntax for defining methods is <code>def methodName x, y, z</code></li>
+<li>Methods in module scope are literally methods, not stand-alone functions.</li>
+<li>Methods in module scope are methods on a <code>self</code> object which is an object
+  in the private module scope.</li>
+<li>Methods can reference each other in the module via the <code>self</code> of <code>this</code> 
+  objects.</li>
+<li>The rest spread <code>...args</code> is written as <code>*args</code>.</li>
+<li>Optional arguments can be given a default value with <code>arg = exp</code> syntax.</li>
+<li>Default values of optional arguments apply even when <code>undefined</code> is passed
+  explicitly.</li>
+<li>Parenthesis around arguments are optional even when there are no arguments.</li>
+</ul>
+<h2 id="basic-syntax">Basic syntax<a class="headerlink" href="#basic-syntax" title="Permanent link">&para;</a></h2>
+<p>Here is a simple method that has no parameters.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>def completeDenial
+    no
+</pre></div>
+</td></tr></table>
+
+<p>To use this method we call it. Since the method <code>completeDenial</code> has no
+arguments it can be called simply by referencing its name in the code:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>completeDenial
+</pre></div>
+</td></tr></table>
+
+<p>If you have programmed in another language, you may think that this is what's
+commonly known as a 'function', but in Imba, these are real methods. They are
+methods on an object called <code>self</code>.</p>
+<p>We can call the <code>completeDenial</code> method like this as well:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>self.completeDenial
+</pre></div>
+</td></tr></table>
+
+<h2 id="method-parameters">Method parameters<a class="headerlink" href="#method-parameters" title="Permanent link">&para;</a></h2>
+<p>As mentioned at the beginning of this section, methods can have parameters.
+Parameters are used to configure how a method operates or pass it values to
+operate on. Here is a method that takes two parameters.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>def add x, y
+    x + y
+</pre></div>
+</td></tr></table>
+
+<p>To call the method <code>add</code>, we reference its name, and we also supply values to 
+it by listing the values after the name of the function.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>add 1, 2
+# 3
+</pre></div>
+</td></tr></table>
+
+<p>The values that were given (or 'passed') to <code>add</code> are also called
+'arguments', so we can say that 'we passed arguments <code>1</code> and <code>2</code> to <code>add</code>.'
+The vales <code>1</code> and <code>2</code> are bound to names <code>x</code> and <code>y</code> in the function. The
+code of the method body is then evaluated, and the value of the last
+expression (<code>x + y</code>) is returned.</p>
+<h2 id="method-return-value">Method return value<a class="headerlink" href="#method-return-value" title="Permanent link">&para;</a></h2>
+<p>Methods have a return value. The return value of a method is the last
+statement in the method. In the case of <code>completeDenial</code>, the return value is
+<code>no</code> as it is the last (and only) expression that evaluated. This is called
+an 'implicit return'.</p>
+<p>The <code>return</code> statement can be used to explicitly return a value. Here is an
+example of a function that returns a value explicitly.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var ammo = 100
+var cheatsEnabled = yes
+
+def shoot
+    if cheatsEnabled
+        return ammo
+    ammo -= 1
+</pre></div>
+</td></tr></table>
+
+<p>In the above method, we have two statements, the <code>if</code> block and <code>ammo</code>. Since
+the return value is always the last statement, we have to use <code>return</code> to
+short-circuit the function if we want to return from within the <code>if</code> block.</p>
+<p>Alternatively, we can make the <code>if</code> block the last statement by including the <code>else</code> clause. This gets rid of the <code>return</code> statement.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var ammo = 100
+var cheatsEnabled = yes
+
+def shoot
+    if cheatsEnabled
+        ammo
+    else
+        ammo -= 1
+</pre></div>
+</td></tr></table>
+
+<p>In the section about <a href="../controls/">control structures</a>, we have briefly
+talked about using <code>return</code> to short-circuit a loop inside methods. When
+using a <code>return</code> statement inside a loop, the method returns immediately,
+just like with <code>if</code> blocks.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var battery = {
+    capacity: 200
+    charge: 15
+}
+
+def charge batt, amount
+    while amount
+        batt:charge += 1
+        if batt:charge &gt; batt:capacity
+            return &quot;Blown!&quot;
+    &quot;Charged&quot;
+
+charge battery, 500
+# &quot;Blown!&quot;
+</pre></div>
+</td></tr></table>
+
+<p>It's important to keep in mind what happens if we short-circuit return from a 
+loop when loop is the last statement in a method. For example:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>def brokenRange x
+    var i = 1
+    while i &lt; x
+        if (i &gt; 50)
+            return i
+        i
+
+brokenRange 100
+# 51
+
+brokenRange 5
+# [1, 2, 3, 4]
+</pre></div>
+</td></tr></table>
+
+<h2 id="optional-parameters">Optional parameters<a class="headerlink" href="#optional-parameters" title="Permanent link">&para;</a></h2>
+<p>One or more parameters in a method can be made optional. This is done by 
+assigning a default value to a parameter.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>def bang text, puncutation = &#39;!&#39;
+    text + punctuation
+</pre></div>
+</td></tr></table>
+
+<p>The parameter <code>punctuation</code> will have a default value of <code>'!'</code> if no values are
+bound to it, or if the value bound to it is <code>undefined</code> (more on this special
+value later).</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var excessiveGreating = bang &#39;Hello&#39;
+var normalGreeting = bang &#39;Hello&#39;, &#39;.&#39;
+</pre></div>
+</td></tr></table>
+
+<p>In the example, <code>excessiveGreeting</code> will be <code>'Hello!'</code>, because the second 
+value is omitted.</p>
+<h2 id="destructured-parameters">Destructured parameters<a class="headerlink" href="#destructured-parameters" title="Permanent link">&para;</a></h2>
+<p>When objects are passed to methods, they can be destructured with default
+values. This is done by writing one or more key-value pairs in place of a
+parameter. </p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>def heal player, intensity: 5
+    player:hp += intensity
+
+var player = {
+    hp: 10
+    mp: 200
+    dmg: 500
+}
+
+var potion = {
+    intensity: 40
+}
+
+heal player, potion
+player:hp
+# 50
+</pre></div>
+</td></tr></table>
+
+<p>Parentheses around key-value pairs are optional.</p>
+<p>The default value is used when a key is not found on the object.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>heal player, {}
+player:hp
+# 55
+</pre></div>
+</td></tr></table>
+
+<p>If a non-object is passed for a destructured parameter, it will be treated as
+the default value is used for the destructured keys.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>heal player, null
+player:hp
+# 60
+</pre></div>
+</td></tr></table>
+
+<h2 id="callback-parameter">Callback parameter<a class="headerlink" href="#callback-parameter" title="Permanent link">&para;</a></h2>
+<p>Methods can declare their last parameter explicitly as a callback using the
+<code>&amp;</code> prefix.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>def saveGame filename, overwrite = no, &amp;callback
+    if overwrite is no and fileExists filename
+        callback &#39;error&#39;
+    writeFile filename, gameState
+    callback()
+</pre></div>
+</td></tr></table>
+
+<p>With the <code>callback</code> parameter defined with the <code>&amp;</code> parameter, when a <a href="../do/">do
+block</a> or a method is passed to <code>saveGame</code>, it will know to bind the
+last argument correctly to the <code>callback</code> parameter even if <code>overwrite</code> is
+skipped.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>saveGame &#39;001.sav&#39;, do |error|
+    if error
+        showError
+</pre></div>
+</td></tr></table>
+
+<p>Without the <code>&amp;</code> prefix, the second argument would be treated as the
+<code>overwrite</code> argument.</p>
+<p>This callback parameter only has an effect when there are optional
+parameters.</p>
+<h2 id="rest-parameters">Rest parameters<a class="headerlink" href="#rest-parameters" title="Permanent link">&para;</a></h2>
+<p>Methods can be declared with rest parameters which capture any parameters
+that are not explicitly declared. The rest parameter is declared using a <code>*</code>
+followed by the name given to an array of captured parameters.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>def equip player, *weapons
+    for weapon in weapons
+        player.equal weapon
+
+equip player, &#39;sword&#39;, &#39;laser gun&#39;, &#39;onion&#39;
+</pre></div>
+</td></tr></table>
+
+<h2 id="referencing-methods-as-objects">Referencing methods as objects<a class="headerlink" href="#referencing-methods-as-objects" title="Permanent link">&para;</a></h2>
+<p>Just like any other value in JavaScript, methods are also objects. They can be
+assigned and passed to other methods and functions as arguments.</p>
+<p>We already mentioned that methods, when referenced by name, are immediately
+called. When we want to use them as values instead of calling them, we need to
+prefix the method name with <code>self:</code>.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>def increment x
+    x + 1
+
+[1, 2, 3].map self:increment
+# [2, 3, 4]
+</pre></div>
+</td></tr></table>
+
+<h2 id="declaring-methods-in-object-literals">Declaring methods in object literals<a class="headerlink" href="#declaring-methods-in-object-literals" title="Permanent link">&para;</a></h2>
+<p>Methods can be declared inside object literals.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var laserGun = {
+    ammo: 1000
+    dmg: 50
+    def shoot
+        &quot;Woosh!&quot;
+}
+</pre></div>
+</td></tr></table>
+
+<p>This creates a property on the object that has a key matching the method name.
+Methods defined in object literals can be called using the <code>object.key</code> 
+notation.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>laserGun.shoot
+# &quot;Woosh!&quot;
+</pre></div>
+</td></tr></table>
+
+<p>When defined inside object literals, we can use <code>self</code> to refer to the object
+to which the method belongs.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var laserGun = {
+    ammo: 1000
+    dmg: 50
+    def shoot target
+        self:ammo -= 1
+        target:hp -= self:dmg 
+}
+
+var badPerson = {
+    hp: 100
+}
+
+laserGun.shoot badPerson
+badPerson:hp
+# 50
+</pre></div>
+</td></tr></table>
+
+<p>When we want to use the method as a value, we can reference it using the <code>:</code>
+operator.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var shoot = laserGun:shoot
+</pre></div>
+</td></tr></table>
+
+<p>In Imba, all methods are unbound. This means that they are not hard-wired to
+the objects to which they belong. To demonstrate this we will use the <code>shoot</code>
+variable we have defined earlier to shoot another target.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var anotherTarget = {
+    hp: 50
+}
+
+shoot anotherTarget
+# TypeError: this is undefined
+</pre></div>
+</td></tr></table>
+
+<p>What happened is that <code>shoot</code> is unbound, so <code>self</code> is <code>undefined</code>. Attempting
+to decrease the value of <code>self:ammo</code> threw a <code>TypeError</code> exception.</p>
+<p>This is the result of what is know as 'invocation context'. Methods are
+called as bound only when we specify the object on which they are called
+using <code>object.key</code> notation. In the last example, we did not use the <code>.</code> 
+anywhere so the method was called unbound (it's invocation context was
+<code>undefined</code>). </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Also read about <a href="https://mzl.la/2P0iy0o"><code>.bind</code></a>,
+<a href="https://mzl.la/2P3aQD7"><code>.call</code></a> and <a href="https://mzl.la/2P0ivSg"><code>.apply</code></a>
+methods for different ways to control the invocation context.</p>
+</div>
+<h2 id="declaring-methods-within-methods">Declaring methods within methods<a class="headerlink" href="#declaring-methods-within-methods" title="Permanent link">&para;</a></h2>
+<p>Methods can be declared anywhere, including inside other methods. However,
+declaring a method within another method can be a bit tricky to wrap one's 
+head around.</p>
+<p>The important thing to remember is that a method is declared as a property on
+<code>self</code>. Consider this example.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>def outer
+    def inner
+       &#39;Hello from inner&#39;
+
+var x = outer
+var y = inner
+</pre></div>
+</td></tr></table>
+
+<p>The outer method, when called, defines the inner method. Since 
+<code>def inner</code> is the last statement in <code>outer</code>, that is also its return value.
+Therefore, <code>x</code> is the <code>inner</code> method. Inside the <code>outer</code> method, <code>self</code> is 
+the same <code>self</code> on which <code>outer</code> itself is defined. Because of this, <code>inner</code> 
+is also defined on the same <code>self</code>. In other words, <code>self</code> now looks like
+this:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var self = {
+    def outer
+        def inner
+            console.log &#39;Hello from inner&#39;
+
+    def inner
+        console.log &#39;Hello from inner&#39;
+}
+</pre></div>
+</td></tr></table>
+
+<p>The way to think about this is that <code>outer</code> is a method that creates the 
+<code>inner</code>.</p>
+<p>We are now able to call <code>inner</code> just by referencing <code>inner</code>, so the value of
+<code>y</code> is <code>'Hello from inner'</code>.</p>
+<p>If we take this one step further, it means that <code>outer</code> can also <em>redefine</em>
+<code>inner</code> if it is <em>already defined</em>. Let's take a look at a modified example:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>def inner
+    &#39;I was here first&#39;
+
+def outer
+    def inner
+       &#39;No, I was here first!&#39;
+
+outer
+var whoWasFirst = inner
+</pre></div>
+</td></tr></table>
+
+<p>The value of <code>whoWasFirst</code> is <code>'No, I was here first!'</code>.</p>
+<h2 id="method-type">Method type<a class="headerlink" href="#method-type" title="Permanent link">&para;</a></h2>
+<p>All methods are objects of type 'function'.</p>
+<h2 id="useful-methods-and-properties">Useful methods and properties<a class="headerlink" href="#useful-methods-and-properties" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It may sound strange, but methods have their own methods and properties, 
+because they are themselves objects.</p>
+</div>
+<ul>
+<li><a href="https://mzl.la/2P34L9s"><code>:length</code></a></li>
+<li><a href="https://mzl.la/2P0ikq4"><code>:name</code></a></li>
+<li><a href="https://mzl.la/2P0ivSg"><code>.apply</code></a></li>
+<li><a href="https://mzl.la/2P0iy0o"><code>.bind</code></a></li>
+<li><a href="https://mzl.la/2P3aQD7"><code>.call</code></a></li>
+<li><a href="https://mzl.la/2P0oq9X"><code>.toString</code></a></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../do/" class="btn btn-neutral float-right" title="Do block">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../controls/" class="btn btn-neutral" title="Control structures - if, try, for, while, until"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>(C)2018 by Hajime Yamasaki Vukelic. Some rights reserved.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../controls/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../do/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

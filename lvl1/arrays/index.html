@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Hajime Yamasaki Vukelic">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Arrays - Imba guide</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Arrays";
+    var mkdocs_page_input_path = "lvl1\\arrays.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Imba guide</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 0 - Intro</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../..">Imba guide</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/about/">About Imba</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/sample/">"Hello, World" example</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/structure/">Guide structure and conventions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/tips/">Tips and tricks for beginners</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/editors/">Setting up your editor</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 1 - Language basics</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../">Language basics</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../comments/">Comments</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../statements/">Statements and expressions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../operators/">Operators</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../primitives/">Primitive types</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../vars/">Variables and variable scope</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../objects/">Objects</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Arrays</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#arrays">Arrays</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#cheats">Cheats</a></li>
+        
+            <li><a class="toctree-l4" href="#creating-arrays">Creating arrays</a></li>
+        
+            <li><a class="toctree-l4" href="#accessing-array-elements">Accessing array elements</a></li>
+        
+            <li><a class="toctree-l4" href="#iterating-over-array-members">Iterating over array members</a></li>
+        
+            <li><a class="toctree-l4" href="#manipulating-arrays">Manipulating arrays</a></li>
+        
+            <li><a class="toctree-l4" href="#useful-methods-and-properties">Useful methods and properties</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../regexps/">Regular expressions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../controls/">Control structures - if, try, for, while, until</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../methods/">Methods</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../do/">Do block</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 2 - Advanced concepts</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lvl2/">Advanced concepts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/modules/">Modules</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/classes/">Classes</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/tags/">Tags</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/async/">Async</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/global/">Global</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/listcomps/">Listcomps</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Bonus</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../bonus/setup/">Setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/testing/">Testing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/migration/">Migration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/escapes/">Escape sequences</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/memoized/">Memoized DOM</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/typedet/">Alternative type detection</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Imba guide</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Level 1 - Language basics &raquo;</li>
+        
+      
+    
+    <li>Arrays</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="arrays">Arrays<a class="headerlink" href="#arrays" title="Permanent link">&para;</a></h1>
+<p>Arrays are objects containing an ordered and indexed list of values. Just like
+<a href="../objects/">objects</a>, arrays can be modified after creation, by adding or
+removing values.</p>
+<h2 id="cheats">Cheats<a class="headerlink" href="#cheats" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Arrays work in Imba the same way as in JavaScript.</li>
+<li>Commas <code>,</code> are optional when listing values vertically.</li>
+<li>Arrays can be looped over with <code>for val in arr</code> and <code>for val, idx in arr</code>.</li>
+</ul>
+<h2 id="creating-arrays">Creating arrays<a class="headerlink" href="#creating-arrays" title="Permanent link">&para;</a></h2>
+<p>Arrays can be created either using the literal syntax, or by evaluating
+<code>for</code>, <code>while</code>, or <code>until</code> loops (more on those in <a href="../controls/">Control
+structure</a>).</p>
+<p>Array literals are written using a pair of square brackets <code>[ ]</code> containing
+a list of comma-separated values.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var moves = [3, 2, 4]
+</pre></div>
+</td></tr></table>
+
+<p>When values are listed vertically, commas are optional.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var achievements = [
+    &#39;level up&#39;,
+    &#39;collect 100 gold&#39;,
+    &#39;triple combo&#39;,
+]
+</pre></div>
+</td></tr></table>
+
+<p>Arrays can also be values in other arrays.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var L = [
+    [0, 1, 0]
+    [0, 1, 0]
+    [0, 1, 1]
+]
+</pre></div>
+</td></tr></table>
+
+<p>Empty arrays are written as just a pair of brackets.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var yourProblems = []
+</pre></div>
+</td></tr></table>
+
+<h2 id="accessing-array-elements">Accessing array elements<a class="headerlink" href="#accessing-array-elements" title="Permanent link">&para;</a></h2>
+<p>Array elements are accessed using computed member access operator <code>[ ]</code>. 
+Indices of array members start at 0, so the first element in the array has
+an index 0, the next one is 1, then 2, and so on. The last index in an array
+is always one less than the array's length.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var scores = [100, 200, 400, 500]
+scores[0]   # 100
+scores[2]   # 400
+</pre></div>
+</td></tr></table>
+
+<p>Array length is obtained through the <code>:length</code> property.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>scores:length   #4
+var lastItem = scores[scores:length - 1]
+</pre></div>
+</td></tr></table>
+
+<p>As can be seen from the last example, we can use arbitrary expression inside
+the square brackets, so long as they evaluate to a number.</p>
+<p>Accessing an array index that is larger than its maximum index will evaluate
+to <code>undefined</code> and will not result in an error.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>scores[40]  # undefined
+</pre></div>
+</td></tr></table>
+
+<h2 id="iterating-over-array-members">Iterating over array members<a class="headerlink" href="#iterating-over-array-members" title="Permanent link">&para;</a></h2>
+<p>Array members can be iterated (looped) over using the <code>for in</code> block. We can
+either iterate over the values only, or both values and indices.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var colors = [&#39;black&#39;, &#39;blue&#39;, &#39;red&#39;, &#39;green&#39;, &#39;white&#39;]
+
+for color in colors
+    console.log color 
+    # &#39;black&#39;
+    # &#39;blue&#39;
+    # &#39;red&#39;
+    # &#39;green&#39;
+    # &#39;white&#39;
+
+for color, i in colors
+    console.log i, color
+    # 0 &#39;black&#39;
+    # 1 &#39;blue&#39;
+    # 2 &#39;red&#39;
+    # 3 &#39;green&#39;
+    # 4 &#39;white&#39;
+
+var colorIndex = {}
+
+for color, i in colors
+    colorIndex[color] = i
+
+colorIndex:red    # 2
+</pre></div>
+</td></tr></table>
+
+<p>You can read more about the <code>for in</code> block in the <a href="../controls/#the-for-loop">Control
+structures</a> section.</p>
+<h2 id="manipulating-arrays">Manipulating arrays<a class="headerlink" href="#manipulating-arrays" title="Permanent link">&para;</a></h2>
+<p>Arrays can be manipulated by assigning values to array indices, adding or 
+removing members from them, or reversing them.</p>
+<p>Values at an existing index can be changed by simply assigning to that
+member.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var classes = [&#39;rogue&#39;, &#39;wizard&#39;, &#39;knight&#39;, &#39;paladin&#39;]
+
+classes[0] = &#39;thief&#39;
+
+classes[0]  # &#39;thief&#39;
+</pre></div>
+</td></tr></table>
+
+<p>Non-existent indices should not be used when assigning. While it may seem
+to work, it will result in strange behavior.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>classes[6] = &#39;programmer&#39;
+
+classes:length  # 7
+
+for cls in classes
+    console.log cls 
+    # &#39;thief&#39;
+    # &#39;wizard&#39;
+    # &#39;knight&#39;
+    # &#39;paladin&#39;,
+    # undefined
+    # undefined
+    # &#39;programmer&#39;
+
+classes
+# [&#39;thief&#39;, &#39;wizard&#39;, &#39;knight&#39;, &#39;paladin&#39;, &lt;2 empty slots&gt;, &#39;programmer&#39;]
+</pre></div>
+</td></tr></table>
+
+<p>For simply iterating over the array using <code>for in</code>, it would seem as if nothing
+is wrong, but the two <code>undefined</code> members that were logged are actually not 
+real members. They are called 'empty slots', and affect the behavior of 
+different array methods we will discuss later.</p>
+<p>The only exception to the above recommendation is the index following the
+last one. The index after the last one is also the value of the <code>:length</code>
+property.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var classes = [&#39;rogue&#39;, &#39;wizard&#39;, &#39;knight&#39;, &#39;paladin&#39;]
+classes[classes:length] = &#39;programmer&#39;
+
+for cls in classes
+    console.log cls 
+    # &#39;rogue&#39;
+    # &#39;wizard&#39;
+    # &#39;knight&#39;
+    # &#39;paladin&#39;,
+    # &#39;programmer&#39;
+</pre></div>
+</td></tr></table>
+
+<h2 id="useful-methods-and-properties">Useful methods and properties<a class="headerlink" href="#useful-methods-and-properties" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://mzl.la/2P1v4wS"><code>:length</code></a></li>
+<li><a href="https://mzl.la/2OZBjRU"><code>.concat</code></a></li>
+<li><a href="https://mzl.la/2OZTeYv"><code>.every</code></a></li>
+<li><a href="https://mzl.la/2OYwVmc"><code>.fill</code></a></li>
+<li><a href="https://mzl.la/2P1uQ90"><code>.filter</code></a></li>
+<li><a href="https://mzl.la/2OYD69N">`.find</a></li>
+<li><a href="https://mzl.la/2OZDBR0"><code>.findIndex</code></a></li>
+<li><a href="https://mzl.la/2OYL0Qg"><code>.forEach</code></a></li>
+<li><a href="https://mzl.la/2OVZXTq"><code>.includes</code></a></li>
+<li><a href="https://mzl.la/2OW0eWs"><code>.indexOf</code></a></li>
+<li><a href="https://mzl.la/2OZDOng"><code>.join</code></a></li>
+<li><a href="https://mzl.la/2OXrzHH"><code>.map</code></a></li>
+<li><a href="https://mzl.la/2OXdpq3"><code>.pop</code></a></li>
+<li><a href="https://mzl.la/2OZwXtM"><code>.push</code></a></li>
+<li><a href="https://mzl.la/2OZDVzc"><code>.reduce</code></a></li>
+<li><a href="https://mzl.la/2P0r1AL"><code>.reduceRight</code></a></li>
+<li><a href="https://mzl.la/2OVWyUt"><code>.reverse</code></a></li>
+<li><a href="https://mzl.la/2P1vIui"><code>.shift</code></a></li>
+<li><a href="https://mzl.la/2OYYCel"><code>.slice</code></a></li>
+<li><a href="https://mzl.la/2OZE4Tg"><code>.some</code></a></li>
+<li><a href="https://mzl.la/2OTOHXH"><code>.sort</code></a></li>
+<li><a href="https://mzl.la/2OZEVDs"><code>.splice</code></a></li>
+<li><a href="https://mzl.la/2P1qBds"><code>.unshift</code></a></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../regexps/" class="btn btn-neutral float-right" title="Regular expressions">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../objects/" class="btn btn-neutral" title="Objects"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>(C)2018 by Hajime Yamasaki Vukelic. Some rights reserved.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../objects/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../regexps/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

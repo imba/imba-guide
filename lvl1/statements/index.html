@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Hajime Yamasaki Vukelic">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Statements and expressions - Imba guide</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Statements and expressions";
+    var mkdocs_page_input_path = "lvl1\\statements.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Imba guide</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 0 - Intro</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../..">Imba guide</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/about/">About Imba</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/sample/">"Hello, World" example</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/structure/">Guide structure and conventions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/tips/">Tips and tricks for beginners</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/editors/">Setting up your editor</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 1 - Language basics</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../">Language basics</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../comments/">Comments</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Statements and expressions</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#statements-and-expressions">Statements and expressions</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#cheats">Cheats</a></li>
+        
+            <li><a class="toctree-l4" href="#definitions">Definitions</a></li>
+        
+            <li><a class="toctree-l4" href="#statements-in-imba">Statements in imba</a></li>
+        
+            <li><a class="toctree-l4" href="#blocks-compound-statements">Blocks (compound statements)</a></li>
+        
+            <li><a class="toctree-l4" href="#block-expressions">Block expressions</a></li>
+        
+            <li><a class="toctree-l4" href="#wrapping-expressions-in-parentheses">Wrapping expressions in parentheses</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../operators/">Operators</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../primitives/">Primitive types</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../vars/">Variables and variable scope</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../objects/">Objects</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../arrays/">Arrays</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../regexps/">Regular expressions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../controls/">Control structures - if, try, for, while, until</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../methods/">Methods</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../do/">Do block</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 2 - Advanced concepts</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lvl2/">Advanced concepts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/modules/">Modules</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/classes/">Classes</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/tags/">Tags</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/async/">Async</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/global/">Global</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/listcomps/">Listcomps</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Bonus</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../bonus/setup/">Setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/testing/">Testing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/migration/">Migration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/escapes/">Escape sequences</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/memoized/">Memoized DOM</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/typedet/">Alternative type detection</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Imba guide</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Level 1 - Language basics &raquo;</li>
+        
+      
+    
+    <li>Statements and expressions</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="statements-and-expressions">Statements and expressions<a class="headerlink" href="#statements-and-expressions" title="Permanent link">&para;</a></h1>
+<p>Statements and expressions are how we organize our code and express various
+concepts.</p>
+<p>Knowing the difference between statements and expressions will be very
+important for programming effectively with Imba.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Some of the things you normally use as a statement in JavaScript are
+<em>expressions</em> in Imba.</p>
+</div>
+<h2 id="cheats">Cheats<a class="headerlink" href="#cheats" title="Permanent link">&para;</a></h2>
+<ul>
+<li>One statement per line.</li>
+<li>Multiple statements per line when separated by <code>;</code>.</li>
+<li>Blocks like <code>if</code>, <code>try</code>, <code>when</code>, <code>until</code>, <code>for</code> are expressions.</li>
+</ul>
+<h2 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">&para;</a></h2>
+<p>Statements are instructions for the computer to perform some action.
+Expressions are various representations of values. They can be a single value
+(e.g., <code>1</code>) or very complex (<code>if x &gt; 1 then createPrevious else null</code>), but 
+it is always possible to treat them as a single value.</p>
+<h2 id="statements-in-imba">Statements in imba<a class="headerlink" href="#statements-in-imba" title="Permanent link">&para;</a></h2>
+<p>Each line in an Imba program is a statement. A line can sometimes contain
+multiple statements separated by a semi-colon <code>;</code>. This is not common, and is
+generally not recommended.</p>
+<p>Each statement comprises of one or more expressions, or statements. When a
+statement contains statements, we say that it is a compound statement.</p>
+<p>For example:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var x = 1       # `var` statement, `1` is an expression
+x + 1           # single expression
+extern isNaN    # single statement `extern`, `isNaN` is an expression
+</pre></div>
+</td></tr></table>
+
+<h2 id="blocks-compound-statements">Blocks (compound statements)<a class="headerlink" href="#blocks-compound-statements" title="Permanent link">&para;</a></h2>
+<p>Some statements mark the start of a block. Subsequent lines, until the end of 
+the block are all part of a compound statement.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>JavaScript uses block delimiters (curly braces), while Imba uses
+significant whitespace.</p>
+</div>
+<p>Blocks start with an opening statement, and then one or more statements that
+are indented by +1 level. Blocks end when a line is encountered that is
+indented at the same level as the opening statement.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>def add x, y    # `def` statement marks the start of a block
+    x + y       # this single expression statement is part of the block
+
+var n = 1       # this `var` statement is not part of the block
+</pre></div>
+</td></tr></table>
+
+<p>The following statements create blocks:</p>
+<ul>
+<li><code>def</code></li>
+<li><code>var def</code></li>
+<li><code>if</code></li>
+<li><code>try</code></li>
+<li><code>when</code></li>
+<li><code>until</code></li>
+<li><code>for</code></li>
+<li><code>tag</code></li>
+<li><code>class</code></li>
+</ul>
+<h3 id="compound-blocks">Compound blocks<a class="headerlink" href="#compound-blocks" title="Permanent link">&para;</a></h3>
+<p>Some blocks may have multiple indented regions which are all part of the same
+block. In case of the <code>if</code> conditional statement, <code>else</code> <em>continues</em> the block 
+created by the <code>if</code> statement.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>if x &gt; 1        # `if` statement, `x &gt; 1` expression
+    x - 1       # single expression
+else if x === 1 # `else if` statement, `x === 1` expression
+    x           # single expression
+else            # `else` statement
+    0           # single expression
+</pre></div>
+</td></tr></table>
+
+<p>The following blocks can be compound:</p>
+<ul>
+<li><code>if</code> - <code>else</code></li>
+<li><code>try</code> - <code>catch</code></li>
+</ul>
+<h2 id="block-expressions">Block expressions<a class="headerlink" href="#block-expressions" title="Permanent link">&para;</a></h2>
+<p>In many languages, blocks like <code>if</code> do not have a meaning on their own. The
+entire block, when executed, provides a meaning. In contrast, in Imba, <code>if</code>,
+<code>while</code>, <code>until</code>, and <code>for</code> blocks have a meaning on their own. They are
+treated as expressions that can be assigned and passed as arguments. This
+will be covered in more detail in the section on <a href="../controls/">control
+structures</a>.</p>
+<h2 id="wrapping-expressions-in-parentheses">Wrapping expressions in parentheses<a class="headerlink" href="#wrapping-expressions-in-parentheses" title="Permanent link">&para;</a></h2>
+<p>Expressions can be wrapped in parentheses. This does not change the value of the
+expression, but it allows us to more clearly specify the order in which we want
+the expressions to evaluate. This is exactly the same as in maths.</p>
+<p>For instance:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>12 - 3 * 4      # 0
+(12 - 3) * 4    # 36
+</pre></div>
+</td></tr></table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../operators/" class="btn btn-neutral float-right" title="Operators">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../comments/" class="btn btn-neutral" title="Comments"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>(C)2018 by Hajime Yamasaki Vukelic. Some rights reserved.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../comments/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../operators/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Hajime Yamasaki Vukelic">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Listcomps - Imba guide</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Listcomps";
+    var mkdocs_page_input_path = "lvl2\\listcomps.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Imba guide</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 0 - Intro</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../..">Imba guide</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/about/">About Imba</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/sample/">"Hello, World" example</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/structure/">Guide structure and conventions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/tips/">Tips and tricks for beginners</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/editors/">Setting up your editor</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 1 - Language basics</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lvl1/">Language basics</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl1/comments/">Comments</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl1/statements/">Statements and expressions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl1/operators/">Operators</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl1/primitives/">Primitive types</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl1/vars/">Variables and variable scope</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl1/objects/">Objects</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl1/arrays/">Arrays</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl1/regexps/">Regular expressions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl1/controls/">Control structures - if, try, for, while, until</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl1/methods/">Methods</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl1/do/">Do block</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 2 - Advanced concepts</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../">Advanced concepts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../modules/">Modules</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../classes/">Classes</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tags/">Tags</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../async/">Async</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../global/">Global</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Listcomps</a>
+    <ul class="subnav">
+            
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Bonus</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../bonus/setup/">Setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/testing/">Testing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/migration/">Migration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/escapes/">Escape sequences</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/memoized/">Memoized DOM</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/typedet/">Alternative type detection</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Imba guide</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Level 2 - Advanced concepts &raquo;</li>
+        
+      
+    
+    <li>Listcomps</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../bonus/setup/" class="btn btn-neutral float-right" title="Setup">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../global/" class="btn btn-neutral" title="Global"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>(C)2018 by Hajime Yamasaki Vukelic. Some rights reserved.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../global/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../bonus/setup/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

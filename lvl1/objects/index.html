@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Hajime Yamasaki Vukelic">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Objects - Imba guide</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Objects";
+    var mkdocs_page_input_path = "lvl1\\objects.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Imba guide</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 0 - Intro</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../..">Imba guide</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/about/">About Imba</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/sample/">"Hello, World" example</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/structure/">Guide structure and conventions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/tips/">Tips and tricks for beginners</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/editors/">Setting up your editor</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 1 - Language basics</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../">Language basics</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../comments/">Comments</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../statements/">Statements and expressions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../operators/">Operators</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../primitives/">Primitive types</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../vars/">Variables and variable scope</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Objects</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#objects">Objects</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#cheats">Cheats</a></li>
+        
+            <li><a class="toctree-l4" href="#object-literals">Object literals</a></li>
+        
+            <li><a class="toctree-l4" href="#accessing-the-properties">Accessing the properties</a></li>
+        
+            <li><a class="toctree-l4" href="#manipulating-objects">Manipulating objects</a></li>
+        
+            <li><a class="toctree-l4" href="#iterating-over-object-properties">Iterating over object properties</a></li>
+        
+            <li><a class="toctree-l4" href="#mutability-and-passing-by-reference">Mutability and passing by reference</a></li>
+        
+            <li><a class="toctree-l4" href="#object-identity">Object identity</a></li>
+        
+            <li><a class="toctree-l4" href="#object-types-and-classes">Object types and classes</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../arrays/">Arrays</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../regexps/">Regular expressions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../controls/">Control structures - if, try, for, while, until</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../methods/">Methods</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../do/">Do block</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 2 - Advanced concepts</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lvl2/">Advanced concepts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/modules/">Modules</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/classes/">Classes</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/tags/">Tags</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/async/">Async</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/global/">Global</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/listcomps/">Listcomps</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Bonus</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../bonus/setup/">Setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/testing/">Testing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/migration/">Migration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/escapes/">Escape sequences</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/memoized/">Memoized DOM</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/typedet/">Alternative type detection</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Imba guide</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Level 1 - Language basics &raquo;</li>
+        
+      
+    
+    <li>Objects</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h1>
+<p>Objects are simple collections of properties. Once created, objects can be
+freely modified by reassigning values to existing properties, adding new
+properties or removing properties. Due to their lightweight syntax, Objects
+in JavaScript can be used as simple associative arrays, hashmaps, or dicts
+found in other languages.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Objects created using native Imba classes are different than objects 
+created using JavaScript constructors. Classes are covered <a href="../../lvl2/classes/">in level
+2</a>.</p>
+</div>
+<h2 id="cheats">Cheats<a class="headerlink" href="#cheats" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Objects behave the same way as in JavaScript but with differences in syntax.</li>
+<li>Syntactically valid JavaScript object literal is valid in Imba.</li>
+<li>Commas <code>,</code> are not needed when properties are listed vertically.</li>
+<li>Braces are optional if objects are used as arguments.</li>
+<li>Braces are optional when nested under properties in object literals.</li>
+<li>Properties are accessed with <code>x:key</code>.</li>
+<li>Methods are called with <code>x.key</code> (parentheses are optional even with no
+  arguments).</li>
+<li>Property access on a potentially nullable object is done with <code>x?:key</code>.</li>
+<li>Method call on a potentially nullable object is done with <code>x?:key</code>.</li>
+<li>Computed member access <code>x[expr]</code> works like in JavaScript.</li>
+<li>Can assign default value to properties with <code>x:key ?= y</code>.</li>
+<li>Object properties can be iterated with <code>for key of obj</code> or 
+  <code>for key, val of obj</code></li>
+</ul>
+<h2 id="object-literals">Object literals<a class="headerlink" href="#object-literals" title="Permanent link">&para;</a></h2>
+<p>The simplest way to create an object is the object literal syntax. This may 
+come as a surprise to programmers coming from object-oriented languages where
+objects must be instantiated using classes. </p>
+<p>While objects in Imba can also be instantiated using classes, there is very
+little difference between such objects and objects created using the object
+literal syntax.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var player = {
+    score: 0
+    lives: 3
+    ammo: 100
+}
+</pre></div>
+</td></tr></table>
+
+<p>An object literal is surrounded by a set of curly braces <code>{ }</code>. Inside the
+curly braces, zero or more key-value pairs are listed. These are known as
+object properties. Each property consists of a key name, a colon <code>:</code>, and a
+value. If a key is present, it must have a value.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you are used to JavaScript objects, please note that commas are 
+optional when listing object keys vertically.</p>
+</div>
+<p>A key is always a string, and values are of any type.</p>
+<p>When multiple properties are written on the same line, they are separated by
+commas:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var gun = { type: &#39;ranged&#39;, power: 120, durability: 0.2 }
+</pre></div>
+</td></tr></table>
+
+<p>An empty object literal is simply a pair of curly braces with no content.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var dead = {}
+</pre></div>
+</td></tr></table>
+
+<p>Object literals can sometimes be written without curly braces. This is the
+case in the following situations:</p>
+<ul>
+<li>When nesting objects inside other object literals.</li>
+<li>Used as an argument to a method or a function.</li>
+</ul>
+<p>In the following example, <code>hotspot</code> property is an object with properties <code>x</code>
+and <code>y</code>.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var level2 = {
+    order: 2
+    exists: 2
+    hotspot:
+        x: 12.1
+        y: 44.2
+}
+</pre></div>
+</td></tr></table>
+
+<p>In the next example, we are calling a method <code>startGame</code> with a single object
+that has properties <code>level</code> and <code>player</code>.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>startGame level: level2, player: player
+</pre></div>
+</td></tr></table>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please note that, unlike JavaScript, there is no shorthand for the cases
+where keys have the same name as a variable that is used as the value.</p>
+</div>
+<p>Properties on objects can be methods or functions (including do blocks).</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var game = {
+    level: level2,
+    player: player,
+
+    def start screen
+        screen.setLevel self:level
+        screen.setPlayer self:player
+}
+</pre></div>
+</td></tr></table>
+
+<h2 id="accessing-the-properties">Accessing the properties<a class="headerlink" href="#accessing-the-properties" title="Permanent link">&para;</a></h2>
+<p>Properties of an object are referenced by its key. There are three ways to 
+access the properties.</p>
+<ul>
+<li><code>:</code> - property access</li>
+<li><code>.</code> - method access</li>
+<li><code>[ ]</code> - computed access</li>
+</ul>
+<p>The property access operator <code>:</code> is used to access the value of a property.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>level2:order  # evaluates to 2
+</pre></div>
+</td></tr></table>
+
+<p>The method access operator <code>.</code> is used to call a method on an object.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>game.start screen
+</pre></div>
+</td></tr></table>
+
+<p>In the above example, the <code>start</code> method on the <code>game</code> object is called with 
+<code>sreen</code> as an argument.</p>
+<p>The computed member access allows us to use any valid expression to calculate
+the key of an object. This includes keys that cannot be used with the usual 
+property and method access operators (e.g., names that contain spaces).</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>game[&#39;play&#39; + &#39;er&#39;]
+
+var key = &#39;level&#39;
+game[key]
+</pre></div>
+</td></tr></table>
+
+<p>If a key does not exist on an object, there is no error. Instead, the accessed
+property will simply evaluate to <code>undefined</code>. Attempting to access properties
+on <code>undefined</code> or <code>null</code> <em>is</em> an error, however.</p>
+<p>Imba provides two operators to safely access properties on nullable objects (<code>undefined</code> and <code>null</code>):</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var possiblyNull = null
+
+possiblyNull?:lives         # `null` (the value of the object itself)
+possiblyNull?.go 12, 33     # nothing happens
+</pre></div>
+</td></tr></table>
+
+<h2 id="manipulating-objects">Manipulating objects<a class="headerlink" href="#manipulating-objects" title="Permanent link">&para;</a></h2>
+<p>Properties can be added to objects at any time by simply assigning to them.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var nightShadow = {
+    type: &#39;skill&#39;
+    magic: no
+    stealth: yes
+    effect: &#39;invisibility&#39;
+}
+
+nightShadow:effectDuration = 2
+
+nightShadow:effectDuration  # 2
+</pre></div>
+</td></tr></table>
+
+<p>It is also possible to only assign the default value (that is, only assign a
+value to a property that does not exist or is nullable).</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>nightShadow:effectDuration ?= 4
+
+nightShadow:effectDuration  # still 2
+</pre></div>
+</td></tr></table>
+
+<p>To delete a property from an object, a <code>delete</code> operator can be used:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>delete nightShadow:effectDuration
+
+nightShadow:effectDuration  # undefined
+</pre></div>
+</td></tr></table>
+
+<h2 id="iterating-over-object-properties">Iterating over object properties<a class="headerlink" href="#iterating-over-object-properties" title="Permanent link">&para;</a></h2>
+<p>We can iterate (loop) over object properties using the <code>for of</code> block.
+We can either iterate just the keys or both keys and values.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var dragon = {
+    health: 2000
+    damage: 500
+    hp: 240
+}
+
+for key of dragon
+    console.log key     # logs &#39;health&#39;, &#39;damage&#39;, &#39;hp&#39;
+
+for key, val of dragon
+    dragon[key] = val - 100
+
+dragon:health   # 1900
+dragon:hp       # 140
+</pre></div>
+</td></tr></table>
+
+<p>In the next example, we will merge an object into another one by iterating
+over properties:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var snail = {
+    speed: 2
+    hp: 1
+}
+
+var poisonVomit = {
+    damage: 200
+    specialAbility: &#39;resist poison&#39;
+}
+
+for key, val of poisonVomit
+    snail[key] = val
+
+snail:damage            # 200
+snail:specialAbility    # &#39;resist poison&#39;
+</pre></div>
+</td></tr></table>
+
+<p>You can read more about the <code>for of</code> block in the <a href="../controls/#the-for-loop">Control
+structures</a> section.</p>
+<h2 id="mutability-and-passing-by-reference">Mutability and passing by reference<a class="headerlink" href="#mutability-and-passing-by-reference" title="Permanent link">&para;</a></h2>
+<p>Objects are mutable. This means that when they are passed to methods and do
+blocks, they are passed by reference and any changes made to them are visible
+both to the method body and the caller.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var player = {
+    score: 0
+    lives: 3
+    health: 100
+}
+
+def hit dmg, player
+    player.health -= dmg
+
+hit 30, player
+
+console.log player:health  # logs 70
+</pre></div>
+</td></tr></table>
+
+<p>The <code>hit</code> method, instead of returning a copy of the <code>player</code> object that
+is different from the one given to it, changes the <code>player</code> object in place.
+This is called a 'mutation'.</p>
+<p>In the example above, the player object was passed to the <code>hit</code> method, and
+was mutated (changed) within it. However, because it is the same object as
+the one defined outside the method, we are able to see the effects of the 
+mutation from outside the <code>hit</code> method. This is known as a 'side effect'.</p>
+<p>It is possible to prevent mutation of objects by using the <code>Object.freeze</code> 
+function. This locks the object so that any attempt to mutate it will result
+in an error.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Object.freeze player
+
+player:score += 100     # error
+</pre></div>
+</td></tr></table>
+
+<h2 id="object-identity">Object identity<a class="headerlink" href="#object-identity" title="Permanent link">&para;</a></h2>
+<p>Two objects are only compared equal if they are the exact same object. In
+this context 'sameness' does not mean the the contents of the two objects,
+but whether they point to the same thing in memory.</p>
+<p>Consider the following examples:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var player1 = {
+    score: 0
+    lives: 3
+    health: 100
+}
+
+var player2 = {
+    score: 0
+    lives: 3
+    health: 100
+}
+
+var player3 = player1;
+
+player1 is player2      # no
+player1 is player3      # yes
+</pre></div>
+</td></tr></table>
+
+<p>Comparing two objects for equality by value requires inspection of individual
+properties.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>def equalObj x, y
+    if x is y  # optimization in case two objects are identical
+        yes
+    else
+        for key, val in x
+            if val isnt y[key]
+                return no
+        yes
+
+equalObj player1, player2   # yes
+equalObj player1, player3   # yes
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The reason this kind of object comparison is not provided out of the box
+is that it is (a) expensive, and (b) objects can be arbitrarily nested,
+in which case it becomes even more complex and expensive.</p>
+</div>
+<h2 id="object-types-and-classes">Object types and classes<a class="headerlink" href="#object-types-and-classes" title="Permanent link">&para;</a></h2>
+<p>All objects have a type 'object' regardless of a class or constructor. To
+determine whether some object is an instance of a class, we use the <code>isa</code>
+operator.</p>
+<p>If we create an object using a <code>Date</code> constructor from the standard
+JavaScript API, we are able to tell it is a <code>Date</code> object.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var d = Date.new
+var notDate = {}
+
+d isa Date          # yes
+notDate isa Date    # no
+</pre></div>
+</td></tr></table>
+
+<p>Note that all objects are ultimately of the class <code>Object</code> because any class
+or constructor inherits from this class.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>d isa Object        # yes
+</pre></div>
+</td></tr></table>
+
+<p>Inheritance will be discussed in more detail in level 2, when we talk about
+<a href="../../lvl2/classes/">classes</a>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../arrays/" class="btn btn-neutral float-right" title="Arrays">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../vars/" class="btn btn-neutral" title="Variables and variable scope"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>(C)2018 by Hajime Yamasaki Vukelic. Some rights reserved.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../vars/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../arrays/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

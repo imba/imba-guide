@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Hajime Yamasaki Vukelic">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Primitive types - Imba guide</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Primitive types";
+    var mkdocs_page_input_path = "lvl1\\primitives.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Imba guide</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 0 - Intro</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../..">Imba guide</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/about/">About Imba</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/sample/">"Hello, World" example</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/structure/">Guide structure and conventions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/tips/">Tips and tricks for beginners</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/editors/">Setting up your editor</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 1 - Language basics</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../">Language basics</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../comments/">Comments</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../statements/">Statements and expressions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../operators/">Operators</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Primitive types</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#primitive-types">Primitive types</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#cheats">Cheats</a></li>
+        
+            <li><a class="toctree-l4" href="#testing-for-types">Testing for types</a></li>
+        
+            <li><a class="toctree-l4" href="#number">Number</a></li>
+        
+            <li><a class="toctree-l4" href="#string">String</a></li>
+        
+            <li><a class="toctree-l4" href="#boolean">Boolean</a></li>
+        
+            <li><a class="toctree-l4" href="#undefined">Undefined</a></li>
+        
+            <li><a class="toctree-l4" href="#null">Null</a></li>
+        
+            <li><a class="toctree-l4" href="#truthy-and-falsy-values">Truthy and falsy values</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../vars/">Variables and variable scope</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../objects/">Objects</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../arrays/">Arrays</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../regexps/">Regular expressions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../controls/">Control structures - if, try, for, while, until</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../methods/">Methods</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../do/">Do block</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 2 - Advanced concepts</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lvl2/">Advanced concepts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/modules/">Modules</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/classes/">Classes</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/tags/">Tags</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/async/">Async</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/global/">Global</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/listcomps/">Listcomps</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Bonus</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../bonus/setup/">Setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/testing/">Testing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/migration/">Migration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/escapes/">Escape sequences</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/memoized/">Memoized DOM</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/typedet/">Alternative type detection</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Imba guide</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Level 1 - Language basics &raquo;</li>
+        
+      
+    
+    <li>Primitive types</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="primitive-types">Primitive types<a class="headerlink" href="#primitive-types" title="Permanent link">&para;</a></h1>
+<p>All programming languages have some notion of types. In simple terms, types
+are the 'kind' of values. They determine what we can do with them. Types
+exist because different operations we perform on values do not always make
+sense for all values. For example we cannot divide a number 3 by a word
+'chair'. That does not make any sense.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In Imba, there is no direct relationship between types and classes.</p>
+</div>
+<p>In Imba, values have one of the following types:</p>
+<ul>
+<li>number</li>
+<li>string</li>
+<li>boolean</li>
+<li>undefined</li>
+<li>null</li>
+<li>regular expression</li>
+<li>object</li>
+<li>array</li>
+<li>function</li>
+</ul>
+<p>For the purposes of this guide, we divide types into primitive and complex 
+types. This section only covers the primitive types. Those are:</p>
+<ul>
+<li><a href="#number">number</a></li>
+<li><a href="#string">string</a></li>
+<li><a href="#boolean">boolean</a></li>
+<li><a href="#undefined">undefined</a></li>
+<li><a href="#null">null</a></li>
+</ul>
+<p>The rest of the types are covered in other sections.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Because all types in Imba are inherited from JavaScript itself, a link to
+the Mozilla Developer Network documentation page on each type will be
+provided. It is recommended to read those pages as well.</p>
+</div>
+<h2 id="cheats">Cheats<a class="headerlink" href="#cheats" title="Permanent link">&para;</a></h2>
+<ul>
+<li>All types are the same as in JavaScript, only minor syntax differences.</li>
+<li><code>typeof</code> operator works the same way as in JavaScript.</li>
+<li>Double-quoted string is also a template string, embed with <code>"{expr}"</code>.</li>
+<li>Single-quoted string cannot be used as templates.</li>
+<li>Multi-line strings supported via <code>"""</code> and <code>'''</code>.</li>
+<li>Multi-line double-quoted strings are also template strings.</li>
+<li>Booleans can also be written as <code>yes</code> and <code>no</code> (idiomatic).</li>
+<li>Indentation of multi-line string is honored (aligned to first line).</li>
+<li><code>typeof null is 'object'</code> like in JavaScript. Sorry.</li>
+</ul>
+<h2 id="testing-for-types">Testing for types<a class="headerlink" href="#testing-for-types" title="Permanent link">&para;</a></h2>
+<p>To determine the type of some value, we use the <code>typeof</code> operator. Writing 
+<code>typeof</code> followed by an expression evaluates to a string that containing the 
+name of the type.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>typeof 1  # &#39;number&#39;
+</pre></div>
+</td></tr></table>
+
+<p>For each type discussed in this section, we will also include the expected 
+result of using <code>typeof</code> with the value.</p>
+<p>Also see <a href="../../bonus/typedet/">Alternative type detection</a> for a more advanced
+and generally not extremely useful approach.</p>
+<h2 id="number">Number<a class="headerlink" href="#number" title="Permanent link">&para;</a></h2>
+<p><strong>typeof:</strong> number</p>
+<p><strong>MDN:</strong> <a href="https://mzl.la/19kgqcw">Number</a></p>
+<p>All numeric values in Imba are of type 'number'. Unlike many other languages, 
+Imba does not make any distinction between floating point and integer numbers,
+and has no representation of rational, irrational, decimal, and other types of 
+numbers.</p>
+<p>Here are some examples of numbers:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>1
+0
+1242
+12.4
+53.6666666661
+</pre></div>
+</td></tr></table>
+
+<p>Technically, JavaScript number type is a double-precision floating point number,
+and has a range of -(2^53-1) to (2^53 - 1).</p>
+<p>The maximum value for numbers on a given platform (browser, NodeJS) can be
+obtained using <code>Number:MAX_VALUE</code> constant. Normally this should be
+1.7976931348623157e+308.</p>
+<p>The largest integer that can be safely represented in JavaScript can be obtained
+using <code>Number:MAX_SAFE_INTEGER</code>. Normally, this should be 9007199254740991.</p>
+<p><strong>Useful methods and properties:</strong></p>
+<ul>
+<li><a href="https://mzl.la/2OYJlKw"><code>.toFixed</code></a></li>
+<li><a href="https://mzl.la/2OVTBDn"><code>.toLocaleString</code></a></li>
+<li><a href="https://mzl.la/148HnQj"><code>Math</code> object</a></li>
+</ul>
+<h3 id="nan-not-a-number">NaN (Not a Number)<a class="headerlink" href="#nan-not-a-number" title="Permanent link">&para;</a></h3>
+<p><strong>typeof:</strong> number</p>
+<p><strong>MDN:</strong> <a href="https://mzl.la/1BoFs5h">NaN</a></p>
+<p><code>NaN</code> is not a type on its own. It is rather a special value of the 'number'
+type. It represents a value that is a nun-number, usually a result of an
+invalid computation.</p>
+<p><code>NaN</code> was present in JavaScript since the very beginnings in order to avoid 
+critical failure of programs in face of invalid mathematical operations such as
+division by zero. Result of any such operation is always <code>NaN</code>.</p>
+<p>The <code>NaN</code> is never equal to any value, including <code>NaN</code> itself. It is therefore 
+not possible to test whether a value is a <code>NaN</code> using equality test.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>9 / 0 === NaN  # this will be false
+NaN === NaN  # this is also false
+</pre></div>
+</td></tr></table>
+
+<p>We test for <code>NaN</code> using either the global <code>isNaN</code> function or <code>Number.isNaN</code>
+function. Main difference is that the global function tests if a value is
+anything but a number (<code>NaN</code>, string, Boolean, etc.) whereas <code>Number.isNaN</code>
+tests only if a value is <code>NaN</code>.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>isNaN 2                 # no
+isNaN &#39;number&#39;          # yes
+isNaN 9 / 0             # yes
+isNaN NaN               # yes
+Number.isNaN 2          # no
+Number.isNaN &#39;number&#39;   # no
+Number.isNaN 9 / 0      # yes
+Number.isNan NaN        # yes
+</pre></div>
+</td></tr></table>
+
+<h2 id="string">String<a class="headerlink" href="#string" title="Permanent link">&para;</a></h2>
+<p><strong>typeof:</strong> string</p>
+<p><strong>MDN:</strong> <a href="https://mzl.la/ORU8rA">String</a></p>
+<p>Character sequences (characters, words, text, etc.) are of type 'string'.</p>
+<p>A string is represented as either single-quoted or double-quoted string of 
+characters:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>&#39;single-quoted&#39;
+&quot;double-quoted&quot;
+</pre></div>
+</td></tr></table>
+
+<p>There is no separate type for single characters. Single characters are
+represented as strings with a single character.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>&#39;string&#39;
+&#39;c&#39;
+</pre></div>
+</td></tr></table>
+
+<p>Imba strings are fully Unicode. There are no different types of Unicode and
+non-Unicode strings.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>&#39;日本語&#39;
+</pre></div>
+</td></tr></table>
+
+<p>Empty strings are represented with quotes that have no characters in them.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>&#39;&#39;
+&quot;&quot;
+</pre></div>
+</td></tr></table>
+
+<p>Double-quoted strings are, for the most part, exactly the same as
+single-quoted ones, except that they also support expression interpolation.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>&quot;string&quot;
+&quot;embed {1 + 2}&quot;
+
+var someNumber = 12
+&quot;embed {someNumber}&quot;
+</pre></div>
+</td></tr></table>
+
+<p>Keep in mind that we are embedding expressions, so any valid expression can go
+into the curly braces, including control structures.</p>
+<p>Some characters within strings must be escaped. This includes characters like 
+tab, newline, carriage return, and quotes.</p>
+<p>For instance:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var stringWithTab = &#39;\tindented&#39;
+</pre></div>
+</td></tr></table>
+
+<p>The sequence of backslash <code>\</code> followed by one or more character is called an
+'escape sequence' and represents these special characters.</p>
+<p>Here is a list of common escape sequences:</p>
+<ul>
+<li><code>\'</code> - single quote (used for single quotes inside single-quoted strings)</li>
+<li><code>\"</code> - double quote (used for double quotes inside double-quoted strings)</li>
+<li><code>\n</code> - newline</li>
+<li><code>\t</code> - tab</li>
+<li><code>\\</code> - backspace itself</li>
+</ul>
+<p>A full list of recognized escape sequences can be found in an
+<a href="../../bonus/escapes/">appendix</a>.</p>
+<p>Imba also has a syntax for multi-line strings. These are strings where 
+whitespace characters do not have to be explicitly escaped.</p>
+<p>Multi-line strings are quoted using sets of three single- or double-quotes.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var longerText = &quot;&quot;&quot;
+                 A voluptates enim omnis. Eius exercitationem ad qui nemo atque 
+                 aut asperiores. Modi perferendis qui dolor doloribus aut quia.
+
+                    Culpa est harum beatae ipsam aut accusamus dolorum. Quo qui 
+                    quia fugit incidunt consequuntur. Voluptas omnis nihil nam 
+                    corporis. Earum ut eum excepturi at.
+                 &quot;&quot;&quot;
+
+var longerSingle = &#39;&#39;&#39;
+                   A voluptates enim omnis. Eius exercitationem ad qui nemo 
+                   atque aut asperiores. Modi perferendis qui dolor doloribus 
+                   aut quia.
+                   &#39;&#39;&#39;
+</pre></div>
+</td></tr></table>
+
+<p>Note that in both cases, indentation is ignored. In the first example, the
+second paragraph of the text is indented only 3 spaces compared to the first
+one.</p>
+<p>As with normal single- and double-quoted strings, embedding expressions only 
+works with the double-quoted variant.</p>
+<p><strong>Useful methods and properties:</strong></p>
+<ul>
+<li><a href="https://mzl.la/2OZkYwC"><code>.endsWith</code></a></li>
+<li><a href="https://mzl.la/2P0oZk7"><code>.includes</code></a></li>
+<li><a href="https://mzl.la/2OZjgLz"><code>.lastIndexOf</code></a></li>
+<li><a href="https://mzl.la/2OXcgif"><code>.padEnd</code></a></li>
+<li><a href="https://mzl.la/2OZuCPw"><code>.padStart</code></a></li>
+<li><a href="https://mzl.la/2OZYkUP"><code>.repeat</code></a></li>
+<li><a href="https://mzl.la/2OZTmqU"><code>.replace</code></a></li>
+<li><a href="https://mzl.la/2OYD3uw"><code>.search</code></a></li>
+<li><a href="https://mzl.la/2OXq4cx"><code>.split</code></a></li>
+<li><a href="https://mzl.la/2OYDMvK"><code>.startsWith</code></a></li>
+<li><a href="https://mzl.la/2P3xY4o"><code>.substring</code></a></li>
+<li><a href="https://mzl.la/2OZTyGE"><code>.toLowerCase</code></a></li>
+<li><a href="https://mzl.la/2P3ywHu"><code>.toUpperCase</code></a></li>
+<li><a href="https://mzl.la/2P1uBeh"><code>.trim</code></a></li>
+</ul>
+<h2 id="boolean">Boolean<a class="headerlink" href="#boolean" title="Permanent link">&para;</a></h2>
+<p><strong>typeof:</strong> boolean</p>
+<p><strong>MDN:</strong> <a href="https://mzl.la/1zgVz8P">Boolean</a></p>
+<p>The 'boolean' type has only two values, True and False. As their name suggests,
+they represent truth values, and are commonly used in logic operations.</p>
+<p>In Imba, boolean values have two names for each of the two values. The truth 
+value for True can be written as either <code>true</code> or <code>yes</code>, whereas the False can
+be written as either <code>false</code> or <code>no</code>. Both forms are exactly the same and the
+choice is a matter of preference.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>true
+yes
+
+false
+no
+</pre></div>
+</td></tr></table>
+
+<p>The boolean values can be used in numeric operations as 1 (for <code>true</code>) and 0
+(for <code>false</code>). It is not recommended to do this too often as it makes the code
+harder to analyze most of the time.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>[&#39;Nope&#39;, &#39;Right on!&#39;][yes]
+# &#39;Right on!&#39;
+</pre></div>
+</td></tr></table>
+
+<h2 id="undefined">Undefined<a class="headerlink" href="#undefined" title="Permanent link">&para;</a></h2>
+<p><strong>typeof:</strong> boolean</p>
+<p><strong>MDN:</strong> <a href="https://mzl.la/SsajwO">undefined</a></p>
+<p>There is only one value of the type 'undefined'. Undefined represents a an
+absence of value. It has the same meaning and semantics as the JavaScript
+counterparts.</p>
+<p>Undefined value is represented by the <code>undefined</code> keyword.</p>
+<p>The value appears frequently to represent different things that are missing.
+For example when a missing property on an object is accessed, <code>undefined</code> is
+returned. When an argument is not passed for a given function parameter, it
+is <code>undefined</code>, and so on.</p>
+<h2 id="null">Null<a class="headerlink" href="#null" title="Permanent link">&para;</a></h2>
+<p><strong>typeof:</strong> object</p>
+<p><strong>MDN:</strong> <a href="https://mzl.la/1zDsM8O">null</a></p>
+<p>The null value may seem similar to <code>undefined</code> but it is a <em>value</em> that
+represents 'no value'.</p>
+<p>Null value is represented using the <code>null</code> keyword.</p>
+<p>To differentiate between <code>undefined</code> and <code>null</code> conceptually, you could think
+of <code>undefined</code> as being unintentional, and <code>null</code> as intentional absence of
+value. Most of the time, the difference technically does not matter, but it
+is common for methods that can foreseeably return no useful value to return
+<code>null</code> rather than <code>undefined</code> (e.g., <code>documnent.getElementById</code> when an
+element with a specified id does not exist).</p>
+<p>The <code>null</code> value is of type 'object'. This is not a typo, and it's by design,
+inherited as is from JavaScript.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var x = null
+x === null  # yes
+</pre></div>
+</td></tr></table>
+
+<p>Another important property of <code>null</code> value is that it compares equal to 
+<code>undefined</code> when non-strict equality operator is used:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>null === undefined  # no
+null == undefined   # yes
+</pre></div>
+</td></tr></table>
+
+<h2 id="truthy-and-falsy-values">Truthy and falsy values<a class="headerlink" href="#truthy-and-falsy-values" title="Permanent link">&para;</a></h2>
+<p>Even though Booleans are clear indication of truth, in general comparisons in
+Imba programs, they are not the only values that can be used as truth values.
+Imba values all fall under either 'truthy' or 'falsy' buckets. Truthy values 
+are treated the same as <code>true</code>, while falsy values are treated as <code>false</code>.</p>
+<p>The following values are falsy:</p>
+<ul>
+<li><code>undefined</code></li>
+<li><code>null</code></li>
+<li><code>0</code></li>
+<li><code>''</code></li>
+<li><code>NaN</code></li>
+</ul>
+<p>All other values, primitive or otherwise, are truthy.</p>
+<p>To convert any value to real boolean based on their 'truthyness', we can 
+simply use double-negation.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var aFalsy = 0
+var aTruthy = &quot;I&#39;m so true!&quot;
+
+not not aFalsy      # no
+not not aTruthy     # yes
+</pre></div>
+</td></tr></table>
+
+<p>Since the double negation is a bit long written with <code>not not</code>, we can also 
+use the short negation operator <code>!</code> twice.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>!!aFalsy      # no
+!!aTruthy     # yes
+</pre></div>
+</td></tr></table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../vars/" class="btn btn-neutral float-right" title="Variables and variable scope">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../operators/" class="btn btn-neutral" title="Operators"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>(C)2018 by Hajime Yamasaki Vukelic. Some rights reserved.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../operators/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../vars/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

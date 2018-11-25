@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Hajime Yamasaki Vukelic">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Operators - Imba guide</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Operators";
+    var mkdocs_page_input_path = "lvl1\\operators.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Imba guide</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 0 - Intro</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../..">Imba guide</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/about/">About Imba</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/sample/">"Hello, World" example</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/structure/">Guide structure and conventions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/tips/">Tips and tricks for beginners</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/editors/">Setting up your editor</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 1 - Language basics</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../">Language basics</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../comments/">Comments</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../statements/">Statements and expressions</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Operators</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#operators">Operators</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#cheats">Cheats</a></li>
+        
+            <li><a class="toctree-l4" href="#list-of-operators">List of operators</a></li>
+        
+            <li><a class="toctree-l4" href="#operator-precedence">Operator precedence</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../primitives/">Primitive types</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../vars/">Variables and variable scope</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../objects/">Objects</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../arrays/">Arrays</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../regexps/">Regular expressions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../controls/">Control structures - if, try, for, while, until</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../methods/">Methods</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../do/">Do block</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 2 - Advanced concepts</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lvl2/">Advanced concepts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/modules/">Modules</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/classes/">Classes</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/tags/">Tags</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/async/">Async</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/global/">Global</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/listcomps/">Listcomps</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Bonus</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../bonus/setup/">Setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/testing/">Testing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/migration/">Migration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/escapes/">Escape sequences</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/memoized/">Memoized DOM</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/typedet/">Alternative type detection</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Imba guide</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Level 1 - Language basics &raquo;</li>
+        
+      
+    
+    <li>Operators</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="operators">Operators<a class="headerlink" href="#operators" title="Permanent link">&para;</a></h1>
+<p>Operators are used as part of expressions to express operations on one or
+more values. </p>
+<p>Some operators will work on one type, while others may work on any type.</p>
+<p>Some operators operate on a single value (unary operators), while others 
+operate on values on the either side (binary operators).</p>
+<p>In the 'usage' column, we will use <code>a</code> and <code>b</code> to mean values or expressions.
+In the 'Assignment operators' section, <code>a</code> is either a variable or a property
+on an object. If either <code>a</code> or <code>b</code> is written with a capital letter (<code>A</code> and
+<code>B</code>), then it is a class.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We use the term 'nullable' to refer to values that could be either <code>null</code>
+or <code>undefined</code>.</p>
+</div>
+<h2 id="cheats">Cheats<a class="headerlink" href="#cheats" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Most JavaScript operators work in Imba.</li>
+<li>Ternary operator is <code>if cond then x else y</code>.</li>
+<li><code>===</code> can be written as <code>x is y</code> (also <code>x isnt y</code> for negation).</li>
+<li>Negation can be written as <code>not x</code>.</li>
+<li><code>instanceof</code> can be written as <code>x isa Ctor</code>.</li>
+<li>Conditional assignment when not nullable using <code>x ?= y</code>.</li>
+<li>Conditional member access when not nullable using <code>x?:key</code> and <code>x?.key</code>.</li>
+<li><code>new</code> operator is written as a static method <code>Ctor.new</code>.</li>
+<li>There are no <code>yield</code> and <code>**</code> operators.</li>
+</ul>
+<h2 id="list-of-operators">List of operators<a class="headerlink" href="#list-of-operators" title="Permanent link">&para;</a></h2>
+<h3 id="arithmetic-operators">Arithmetic operators<a class="headerlink" href="#arithmetic-operators" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>op.</th>
+<th>usage</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-</code></td>
+<td><code>-a</code></td>
+<td>negative <code>a</code></td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td><code>+a</code></td>
+<td>plus <code>a</code>, or just <code>a</code></td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td><code>a + b</code></td>
+<td>add <code>a</code> to <code>b</code></td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td><code>a - b</code></td>
+<td>subtract <code>b</code> from <code>a</code></td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td><code>a * b</code></td>
+<td>multiply <code>a</code> by <code>b</code></td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td><code>a / b</code></td>
+<td>divide <code>a</code> by <code>b</code></td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td><code>a % b</code></td>
+<td>remainder of division of <code>a</code> by <code>b</code></td>
+</tr>
+<tr>
+<td><code>++</code></td>
+<td><code>a++</code></td>
+<td>increment then evaluate</td>
+</tr>
+<tr>
+<td><code>++</code></td>
+<td><code>++a</code></td>
+<td>evaluate then increment</td>
+</tr>
+<tr>
+<td><code>--</code></td>
+<td><code>a--</code></td>
+<td>decrement then evaluate</td>
+</tr>
+<tr>
+<td><code>--</code></td>
+<td><code>--a</code></td>
+<td>evaluate then decrement</td>
+</tr>
+</tbody>
+</table>
+<h3 id="comparison-operators">Comparison operators<a class="headerlink" href="#comparison-operators" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>op.</th>
+<th>usage</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>is</code></td>
+<td><code>a is b</code></td>
+<td><code>a</code> is identical to <code>b</code> (are same)</td>
+</tr>
+<tr>
+<td><code>isnt</code></td>
+<td><code>a isnt b</code></td>
+<td><code>a</code> is not identical to <code>b</code> (aren't same)</td>
+</tr>
+<tr>
+<td><code>==</code></td>
+<td><code>a == b</code></td>
+<td><code>a</code> equals <code>b</code> (but not identical)</td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td><code>a != b</code></td>
+<td><code>a</code> does not equal <code>b</code></td>
+</tr>
+<tr>
+<td><code>===</code></td>
+<td><code>a === b</code></td>
+<td>same as <code>a is b</code></td>
+</tr>
+<tr>
+<td><code>!==</code></td>
+<td><code>a !== b</code></td>
+<td>same as <code>a isnt b</code></td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td><code>a &gt; b</code></td>
+<td><code>a</code> is greater than <code>b</code></td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td><code>a &gt;= b</code></td>
+<td><code>a</code> is greater than or equals <code>b</code></td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td><code>a &lt; b</code></td>
+<td><code>a</code> is less than <code>b</code></td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td><code>a &lt;= b</code></td>
+<td><code>a</code> is less than or equals <code>b</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="bitwise-operators">Bitwise operators<a class="headerlink" href="#bitwise-operators" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>op.</th>
+<th>usage</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>~</code></td>
+<td><code>~a</code></td>
+<td>bitwise not <code>a</code></td>
+</tr>
+<tr>
+<td><code>&amp;</code></td>
+<td><code>a &amp; b</code></td>
+<td>bitwise <code>a</code> AND <code>b</code></td>
+</tr>
+<tr>
+<td><code>|</code></td>
+<td><code>a | b</code></td>
+<td>bitwise <code>a</code> OR <code>b</code></td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td><code>a ^ b</code></td>
+<td>bitwise <code>a</code> XOR <code>b</code></td>
+</tr>
+<tr>
+<td><code>&gt;&gt;</code></td>
+<td><code>a &gt;&gt; b</code></td>
+<td>bitwise signed right shift <code>a</code> by <code>b</code> positions</td>
+</tr>
+<tr>
+<td><code>&gt;&gt;&gt;</code></td>
+<td><code>a &gt;&gt;&gt; b</code></td>
+<td>bitwise unsigned right shift <code>a</code> by <code>b</code> positions</td>
+</tr>
+<tr>
+<td><code>&lt;&lt;</code></td>
+<td><code>a &lt;&lt; b</code></td>
+<td>bitwise left shift <code>a</code> by <code>b</code> positions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="logical-operators">Logical operators<a class="headerlink" href="#logical-operators" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>op.</th>
+<th>usage</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>not</code></td>
+<td><code>not a</code></td>
+<td>logical not <code>a</code></td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td><code>!a</code></td>
+<td>same as <code>not a</code></td>
+</tr>
+<tr>
+<td><code>and</code></td>
+<td><code>a and b</code></td>
+<td>logical <code>a</code> AND <code>b</code></td>
+</tr>
+<tr>
+<td><code>&amp;&amp;</code></td>
+<td><code>a &amp;&amp; b</code></td>
+<td>same as <code>a and b</code></td>
+</tr>
+<tr>
+<td><code>or</code></td>
+<td><code>a or b</code></td>
+<td>logical <code>a</code> OR <code>b</code> (<code>b</code> evaluated when <code>a</code> is falsy)</td>
+</tr>
+<tr>
+<td><code>||</code></td>
+<td><code>a || b</code></td>
+<td>same as <code>a or b</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="relational-operators">Relational operators<a class="headerlink" href="#relational-operators" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>op.</th>
+<th>usage</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>in</code></td>
+<td><code>a in b</code></td>
+<td>whether value <code>a</code> exists in array <code>b</code></td>
+</tr>
+<tr>
+<td><code>isa</code></td>
+<td><code>a isa B</code></td>
+<td>whether a is an instance of class <code>B</code></td>
+</tr>
+<tr>
+<td><code>instanceof</code></td>
+<td><code>a instanceof B</code></td>
+<td>same as <code>a isa b</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="assignment-operators">Assignment operators<a class="headerlink" href="#assignment-operators" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>op.</th>
+<th>usage</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>=</code></td>
+<td><code>a = b</code></td>
+<td>assign value <code>b</code> to variable <code>a</code></td>
+</tr>
+<tr>
+<td><code>?=</code></td>
+<td><code>a ?= b</code></td>
+<td>assign value <code>b</code> to <code>a</code> if <code>a</code> is nullable</td>
+</tr>
+<tr>
+<td><code>+=</code></td>
+<td><code>a += b</code></td>
+<td>add <code>b</code> to <code>a</code> and assign to <code>a</code></td>
+</tr>
+<tr>
+<td><code>-=</code></td>
+<td><code>a -= b</code></td>
+<td>subtract <code>b</code> from <code>a</code> and assign to <code>a</code></td>
+</tr>
+<tr>
+<td><code>*=</code></td>
+<td><code>a *= b</code></td>
+<td>multiply <code>a</code> by <code>b</code> and assign to <code>a</code></td>
+</tr>
+<tr>
+<td><code>/=</code></td>
+<td><code>a /= b</code></td>
+<td>divide <code>a</code> by <code>b</code> and assign to <code>a</code></td>
+</tr>
+<tr>
+<td><code>%=</code></td>
+<td><code>a %= b</code></td>
+<td>divide <code>a</code> by <code>b</code> and assign the remainder to <code>a</code></td>
+</tr>
+<tr>
+<td><code>&amp;=</code></td>
+<td><code>a &amp;= b</code></td>
+<td>bitwise AND <code>a</code> and <code>b</code> and assign to <code>a</code></td>
+</tr>
+<tr>
+<td><code>|=</code></td>
+<td><code>a |= b</code></td>
+<td>bitwise OR <code>a</code> and <code>b</code> and assign to <code>a</code></td>
+</tr>
+<tr>
+<td><code>^=</code></td>
+<td><code>b ^= b</code></td>
+<td>bitwise XOR <code>a</code> and <code>b</code> and assign to <code>a</code></td>
+</tr>
+<tr>
+<td><code>&gt;&gt;=</code></td>
+<td><code>a &gt;&gt;= b</code></td>
+<td>bitwise sig. right shift <code>a</code> by <code>b</code> and assign to <code>a</code></td>
+</tr>
+<tr>
+<td><code>&gt;&gt;&gt;=</code></td>
+<td><code>a &gt;&gt;&gt;= b</code></td>
+<td>bitwise uns. right shift <code>a</code> by <code>b</code> and assign to <code>a</code></td>
+</tr>
+<tr>
+<td><code>&lt;&lt;=</code></td>
+<td><code>a &lt;&lt;= b</code></td>
+<td>bitwise left shift <code>a</code> by <code>b</code> and assign to <code>a</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="comma-operator">Comma operator<a class="headerlink" href="#comma-operator" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>op.</th>
+<th>usage</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>,</code></td>
+<td><code>a, b</code></td>
+<td>evaluate <code>a</code> then <code>b</code>, evaluate everything as <code>b</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="grouping-operator">Grouping operator<a class="headerlink" href="#grouping-operator" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>op.</th>
+<th>usage</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(...)</code></td>
+<td><code>(a)</code></td>
+<td>evaluate <code>a</code> with priority</td>
+</tr>
+</tbody>
+</table>
+<h3 id="member-access">Member access<a class="headerlink" href="#member-access" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>op.</th>
+<th>usage</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[ ]</code></td>
+<td><code>a[b]</code></td>
+<td>computed member <code>b</code> of an object/array <code>a</code></td>
+</tr>
+<tr>
+<td><code>:</code></td>
+<td><code>a:b</code></td>
+<td>member <code>b</code> of an object <code>a</code></td>
+</tr>
+<tr>
+<td><code>?:</code></td>
+<td><code>a?:b</code></td>
+<td>member <code>b</code> of an object <code>a</code> if <code>a</code> isn't nullable</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td><code>a.b</code></td>
+<td>invoke method <code>b</code> of object <code>a</code></td>
+</tr>
+<tr>
+<td><code>?.</code></td>
+<td><code>a?.b</code></td>
+<td>invoke method <code>b</code> object <code>a</code> if <code>a</code> isn't nullable</td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-operators">Other operators<a class="headerlink" href="#other-operators" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>op.</th>
+<th>usage</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.new</code></td>
+<td><code>A.new b</code></td>
+<td>create an instance of class <code>A</code> with argument <code>b</code></td>
+</tr>
+<tr>
+<td><code>delete</code></td>
+<td><code>delete a:b</code></td>
+<td>delete property <code>b</code> of object <code>a</code></td>
+</tr>
+<tr>
+<td><code>typeof</code></td>
+<td><code>typeof a</code></td>
+<td>the type of value <code>a</code></td>
+</tr>
+<tr>
+<td><code>await</code></td>
+<td><code>await a</code></td>
+<td>suspend an async function until <code>a</code> resolves</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ternary-operator">Ternary operator<a class="headerlink" href="#ternary-operator" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>op.</th>
+<th>usage</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>if-then</code></td>
+<td><code>if a then b else c</code></td>
+<td>if <code>a</code> is truthy, then <code>b</code> otherwise <code>c</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="operator-precedence">Operator precedence<a class="headerlink" href="#operator-precedence" title="Permanent link">&para;</a></h2>
+<p>Not all operators have equal importance when an expression consists of multiple
+operators. </p>
+<p>The order in which operators are evaluated depends on whether an
+operator is left- or right-associative.</p>
+<p>Left-associative means that for a given operator <code>X</code>, <code>a X b X c</code> is treated
+as <code>(a X b) X c</code>: from left to right.</p>
+<p>Right-associative means that for a given operator <code>X</code>, an expression <code>a X b X
+c</code> will evaluate as <code>a X (b X c)</code>: from right to left.</p>
+<p>All binary Imba operators are left-associative.</p>
+<p>Some operators are also generally more important regardless of associativity.
+As in mathematics, multiplication and division are more important than
+addition and subtraction, for example. </p>
+<p>The following is a list of all the operators ordered by importance. The
+'score' column is there to provide an indication of what operators have the
+same importance.</p>
+<table>
+<thead>
+<tr>
+<th>score</th>
+<th>op.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20</td>
+<td><code>(...)</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>19</td>
+<td>all member access operators</td>
+</tr>
+<tr>
+<td></td>
+<td>function calls</td>
+</tr>
+<tr>
+<td></td>
+<td><code>in</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>18</td>
+<td>postfix increment and decrement</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>17</td>
+<td><code>.new</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td>logical and bitwise NOT</td>
+</tr>
+<tr>
+<td></td>
+<td>unary arithmetic operators</td>
+</tr>
+<tr>
+<td></td>
+<td>unary logical operators</td>
+</tr>
+<tr>
+<td></td>
+<td>unary bitwise operators</td>
+</tr>
+<tr>
+<td></td>
+<td><code>typeof</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>delete</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>await</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td>(left blank for future use)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>*</code>, <code>/</code>, <code>%</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>+</code>, <code>-</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td>bitwise shift operators</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>isa</code>, <code>instanceof</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>is</code>, <code>==</code>, <code>===</code>, <code>isnt</code>, <code>!==</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>&amp;</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>^</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>|</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>and</code>, <code>&amp;&amp;</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>or</code>, <code>||</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>ternary operator</td>
+</tr>
+<tr>
+<td></td>
+<td><code>?:</code>, <code>?.</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>all assignment operators</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>(left blank for future use)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>,</code></td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../primitives/" class="btn btn-neutral float-right" title="Primitive types">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../statements/" class="btn btn-neutral" title="Statements and expressions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>(C)2018 by Hajime Yamasaki Vukelic. Some rights reserved.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../statements/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../primitives/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

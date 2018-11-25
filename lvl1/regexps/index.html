@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Hajime Yamasaki Vukelic">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Regular expressions - Imba guide</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Regular expressions";
+    var mkdocs_page_input_path = "lvl1\\regexps.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Imba guide</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 0 - Intro</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../..">Imba guide</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/about/">About Imba</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/sample/">"Hello, World" example</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/structure/">Guide structure and conventions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/tips/">Tips and tricks for beginners</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/editors/">Setting up your editor</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 1 - Language basics</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../">Language basics</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../comments/">Comments</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../statements/">Statements and expressions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../operators/">Operators</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../primitives/">Primitive types</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../vars/">Variables and variable scope</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../objects/">Objects</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../arrays/">Arrays</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Regular expressions</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#regular-expressions">Regular expressions</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#cheats">Cheats</a></li>
+        
+            <li><a class="toctree-l4" href="#writing-regular-expressions">Writing regular expressions</a></li>
+        
+            <li><a class="toctree-l4" href="#regular-expression-syntax">Regular expression syntax</a></li>
+        
+            <li><a class="toctree-l4" href="#useful-methods-and-properties">Useful methods and properties</a></li>
+        
+            <li><a class="toctree-l4" href="#string-methods-that-accept-regular-expressions">String methods that accept regular expressions</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../controls/">Control structures - if, try, for, while, until</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../methods/">Methods</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../do/">Do block</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 2 - Advanced concepts</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lvl2/">Advanced concepts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/modules/">Modules</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/classes/">Classes</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/tags/">Tags</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/async/">Async</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/global/">Global</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/listcomps/">Listcomps</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Bonus</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../bonus/setup/">Setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/testing/">Testing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/migration/">Migration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/escapes/">Escape sequences</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/memoized/">Memoized DOM</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/typedet/">Alternative type detection</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Imba guide</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Level 1 - Language basics &raquo;</li>
+        
+      
+    
+    <li>Regular expressions</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="regular-expressions">Regular expressions<a class="headerlink" href="#regular-expressions" title="Permanent link">&para;</a></h1>
+<p>Regular expression is a language that represents patterns in strings.
+Different programming languages have different flavors of this notation. Imba
+uses the JavaScript flavor. Regular expressions are used to test for, search
+for or extract character patterns in strings.</p>
+<h2 id="cheats">Cheats<a class="headerlink" href="#cheats" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The regular expression syntax and flags are the same as in JavaScript.</li>
+<li>Multi-line regular expressions are supported with <code>///</code>.</li>
+<li><em>Unescaped</em> whitespace in multi-line regular expressions are ignored.</li>
+</ul>
+<h2 id="writing-regular-expressions">Writing regular expressions<a class="headerlink" href="#writing-regular-expressions" title="Permanent link">&para;</a></h2>
+<p>Single line regular expressions are written in the <code>/pattern/modifiers</code> form,
+and the multi-line regular expressions are written with triple-slashes.</p>
+<p>In multi-line regular expressions, any unescaped whitespace is collapsed,
+which is not the case with single-line expressions.</p>
+<p>This is an example of a single-line regular expression:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>/reg exp/
+</pre></div>
+</td></tr></table>
+
+<p>This is an example of a multi-line regular expression:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>///
+(can use multi-line regexp
+# Can add comments inside the regular expressions.
+| that ignores whitespace
+)?
+///
+</pre></div>
+</td></tr></table>
+
+<p>The second example is identical to the following:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>/(canusemulti-lineregexp|thatignoreswhitespace)?/
+</pre></div>
+</td></tr></table>
+
+<p>Regular expressions can have flags. The flags are single characters that are
+written directly after the closing slash <code>/</code>. These flags change the way 
+regular expressions operate.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>/reg exp/gi
+</pre></div>
+</td></tr></table>
+
+<p>The example regular expression has <code>g</code> and <code>i</code> flags. The <code>g</code> flag tells the
+regular expression to apply 'globally' (match all occurrences, not just the
+first one), and <code>i</code> flag tells it to 'ignore' the differences between upper-
+and lower-case letters.</p>
+<p>Regular expressions can also be created from strings using the <code>RegExp</code> 
+constructor.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>RegExp.new &#39;\\w+&#39;, &#39;gi&#39;
+</pre></div>
+</td></tr></table>
+
+<p>Although the regular expression literal syntax is normally preferred, the 
+constructor can be used to create regular expressions dynamically by using
+template strings:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var name = &#39;John&#39;
+RegExp.new &quot;[a-z]+_{name}\\.txt&quot;, &#39;i&#39;
+</pre></div>
+</td></tr></table>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When constructing regular expressions from strings with embedded
+variables, you should be careful to escape any backslashes in the
+variable. Failure to do so may allow the users of your program to modify
+the meaning of your regular expression by including backslashes in the 
+input.</p>
+</div>
+<h2 id="regular-expression-syntax">Regular expression syntax<a class="headerlink" href="#regular-expression-syntax" title="Permanent link">&para;</a></h2>
+<p>Regular expressions in Imba use the same notation as the JavaScript regular
+expressions, so we will not provide a full reference on the syntax. See the
+<a href="https://mzl.la/2P3AveU">MDN article</a> on regular expressions for more
+details.</p>
+<h2 id="useful-methods-and-properties">Useful methods and properties<a class="headerlink" href="#useful-methods-and-properties" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://mzl.la/2OZUCKH"><code>:flags</code></a></li>
+<li><a href="https://mzl.la/2OZV3EP"><code>:global</code></a></li>
+<li><a href="https://mzl.la/2OTPMyJ"><code>:ignoreCase</code></a></li>
+<li><a href="https://mzl.la/2P1wZl4"><code>:lastIndex</code></a></li>
+<li><a href="https://mzl.la/2OZFGMO"><code>:multiline</code></a></li>
+<li><a href="https://mzl.la/2OZnXVQ"><code>:source</code></a></li>
+<li><a href="https://mzl.la/2OZ1asV"><code>:sticky</code></a></li>
+<li><a href="https://mzl.la/2OVZoJ7"><code>:unicode</code></a></li>
+<li><a href="https://mzl.la/2P0siI3"><code>.exec</code></a></li>
+<li><a href="https://mzl.la/2OZpew6"><code>.test</code></a></li>
+</ul>
+<h2 id="string-methods-that-accept-regular-expressions">String methods that accept regular expressions<a class="headerlink" href="#string-methods-that-accept-regular-expressions" title="Permanent link">&para;</a></h2>
+<p>Some string methods accept regular expressions. These are:</p>
+<ul>
+<li><a href="https://mzl.la/2OZTmqU"><code>.replace</code></a></li>
+<li><a href="https://mzl.la/2OXq4cx"><code>.split</code></a></li>
+<li><a href="https://mzl.la/2P0suqL"><code>.match</code></a></li>
+<li><a href="https://mzl.la/2OZTmqU"><code>.replace</code></a></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../controls/" class="btn btn-neutral float-right" title="Control structures - if, try, for, while, until">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../arrays/" class="btn btn-neutral" title="Arrays"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>(C)2018 by Hajime Yamasaki Vukelic. Some rights reserved.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../arrays/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../controls/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

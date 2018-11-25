@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Hajime Yamasaki Vukelic">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Control structures - if, try, for, while, until - Imba guide</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Control structures - if, try, for, while, until";
+    var mkdocs_page_input_path = "lvl1\\controls.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Imba guide</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 0 - Intro</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../..">Imba guide</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/about/">About Imba</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/sample/">"Hello, World" example</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/structure/">Guide structure and conventions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/tips/">Tips and tricks for beginners</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl0/editors/">Setting up your editor</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 1 - Language basics</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../">Language basics</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../comments/">Comments</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../statements/">Statements and expressions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../operators/">Operators</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../primitives/">Primitive types</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../vars/">Variables and variable scope</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../objects/">Objects</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../arrays/">Arrays</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../regexps/">Regular expressions</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Control structures - if, try, for, while, until</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#control-structures-if-try-for-while-until">Control structures - if, try, for, while, until</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#cheats">Cheats</a></li>
+        
+            <li><a class="toctree-l4" href="#the-if-block">The if block</a></li>
+        
+            <li><a class="toctree-l4" href="#the-try-block">The try block</a></li>
+        
+            <li><a class="toctree-l4" href="#the-while-loop">The while loop</a></li>
+        
+            <li><a class="toctree-l4" href="#the-until-loop">The until loop</a></li>
+        
+            <li><a class="toctree-l4" href="#the-for-loop">The for loop</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../methods/">Methods</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../do/">Do block</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Level 2 - Advanced concepts</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../lvl2/">Advanced concepts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/modules/">Modules</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/classes/">Classes</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/tags/">Tags</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/async/">Async</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/global/">Global</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../lvl2/listcomps/">Listcomps</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Bonus</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../bonus/setup/">Setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/testing/">Testing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/migration/">Migration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/escapes/">Escape sequences</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/memoized/">Memoized DOM</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../bonus/typedet/">Alternative type detection</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Imba guide</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Level 1 - Language basics &raquo;</li>
+        
+      
+    
+    <li>Control structures - if, try, for, while, until</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="control-structures-if-try-for-while-until">Control structures - if, try, for, while, until<a class="headerlink" href="#control-structures-if-try-for-while-until" title="Permanent link">&para;</a></h1>
+<p>Control structures control the flow of execution by providing mechanism for
+branching and repeating execution of code. Imba has several different control
+structures.</p>
+<ul>
+<li><code>if</code> blocks control branching</li>
+<li><code>try</code> blocks handle exceptions</li>
+<li>loops (<code>for</code>, <code>while</code>, <code>until</code>) allow repetitive execution of code blocks</li>
+</ul>
+<h2 id="cheats">Cheats<a class="headerlink" href="#cheats" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Imba has the <code>if</code>, <code>try</code>, <code>while</code>, <code>until</code> and <code>for</code> blocks.</li>
+<li>All blocks are expressions which can be assigned and passed around.</li>
+<li>There are no parentheses around conditions.</li>
+<li>There is no punctuation in blocks (e.g., <code>if x</code>).</li>
+<li><code>if</code> block can have <code>else if</code> and <code>else</code> branches.</li>
+<li><code>for</code>, <code>white</code>, <code>until</code> can be passed and assigned as arrays.</li>
+<li><code>for</code>, <code>white</code>, <code>until</code> can <code>break</code> and <code>continue</code>.</li>
+<li><code>for x in arr</code> or <code>for x, idx in arr</code> to loop over arrays.</li>
+<li><code>for key of obj</code> or <code>for key, val of obj</code> to loop over object properties.</li>
+<li>There is no <code>for i; i &lt; j; i++</code> version of <code>for</code> loop in Imba.</li>
+<li><code>catch</code> is optional in <code>try</code> block.</li>
+</ul>
+<h2 id="the-if-block">The <code>if</code> block<a class="headerlink" href="#the-if-block" title="Permanent link">&para;</a></h2>
+<p>Sometimes we want to do different things depending on some condition. For
+instance, 'if user is logged in, show them the profile page, and otherwise
+take them to the log in page.'</p>
+<p>Just like the name suggests, the <code>if</code> blocks are only evaluated if some
+condition is met. The condition can be any valid Imba expression, including any
+of the control blocks found in this section (yes, <code>if</code> block itself, too!).</p>
+<p>For example:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var lives = 0
+
+if lives is 0
+    &#39;You are dead&#39;
+</pre></div>
+</td></tr></table>
+
+<p>We can also specify what happens in the other case:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var lives = 3
+
+if lives is 0
+    &#39;You are dead&#39;
+else
+    lives -= 1
+    &quot;You have {lives} more lives&quot;
+</pre></div>
+</td></tr></table>
+
+<p>The <code>if</code> block is not restricted to just <code>if</code> and <code>else</code> branches. One or
+more additional conditions can be specified as <code>else if</code> branches. For
+example:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var lives = 3
+
+if lives is 0
+    &#39;You are dead&#39;
+else if lives is 1
+    lives -= 1
+    &#39;You are mine next time!&#39;
+else
+    lives -= 1
+    &quot;You have {lives} more lives&quot;.
+</pre></div>
+</td></tr></table>
+
+<p>If blocks can be assigned to variables.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var lives = 3
+
+var x = if lives is 0
+    &#39;You are dead&#39;
+else
+    lives -= 1
+    &quot;You have {lives} more lives&quot;
+
+x
+# &quot;You have 2 more lives&quot;
+</pre></div>
+</td></tr></table>
+
+<h3 id="ternary-expression">Ternary expression<a class="headerlink" href="#ternary-expression" title="Permanent link">&para;</a></h3>
+<p>In some cases, we can write the <code>if</code> block as a ternary expression to save
+space. Ternary expression is not technically a control structure, but we will
+mention it here because we don't have a better things to do anyway.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var lives = 3
+var isDead = if lives is 0 then yes else no
+</pre></div>
+</td></tr></table>
+
+<p>The <code>else if</code> branches cannot be used in ternary expressions.</p>
+<h2 id="the-try-block">The <code>try</code> block<a class="headerlink" href="#the-try-block" title="Permanent link">&para;</a></h2>
+<p>Perfectly valid code will sometimes throw exceptions. Exceptions are objects
+generated by some error condition or thrown by some code. Exception objects
+will propagate through the application from the point where it was thrown,
+then back up through the path that lead to the point. If it is not caught
+somewhere on the path, it will eventually reach the JavaScript engine itself,
+and be treated as an 'uncaught' exception. (This is usually going to show up
+as a traceback in the developer console or in the terminal.)</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>def foogGun
+    throw Error &#39;bug!&#39;
+
+try
+    footGun
+catch e
+    console.log &quot;That was close! Let&#39;s do it again!&quot;
+</pre></div>
+</td></tr></table>
+
+<p>The <code>e</code> variable in the <code>catch</code> branch is the error object that was thrown by
+the <code>footGun</code> method.</p>
+<p>Note that the <code>catch</code> branch is <em>optional</em>. If we simply wish to suppress an
+exception without doing anything, we can completely omit it.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>try
+    fooGun
+# Look, mom, no catch!
+</pre></div>
+</td></tr></table>
+
+<p>Like <code>if</code> blocks, the <code>try</code> block can be assigned </p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var afermath = try
+    footGun
+catch e
+    &#39;Feeling exceptionally good!&#39;
+</pre></div>
+</td></tr></table>
+
+<h2 id="the-while-loop">The <code>while</code> loop<a class="headerlink" href="#the-while-loop" title="Permanent link">&para;</a></h2>
+<p>The <code>while</code> loop is the simplest control structure for repeating blocks of 
+code. It repeats the block while some condition is met, hence the name.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var bullets = 1000
+
+white bullets &gt; 0
+    bullets--
+</pre></div>
+</td></tr></table>
+
+<p>Other than letting the while loop run until the condition no longer applies,
+we can also end it prematurely by using the <code>break</code> or <code>return</code> statements. </p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var count = 0
+
+while yes  # yes is always yes, so this will loop indefinitely
+    count++
+    break
+
+count
+# 1
+</pre></div>
+</td></tr></table>
+
+<p>The <code>return</code> statement can only be used inside methods or do blocks as it
+doesn't really terminate the while loop, but returns from the method or do
+block completely.</p>
+<p>While looping inside a <code>while</code> loop, we can use <code>continue</code> to skip the rest 
+of the block. It's basically like jumping back to the top of the block.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var evenNumbers = []
+var i = 0
+
+while i++ &lt; 200
+    if i % 2
+        continue
+    evenNumbers.push i
+</pre></div>
+</td></tr></table>
+
+<h2 id="the-until-loop">The <code>until</code> loop<a class="headerlink" href="#the-until-loop" title="Permanent link">&para;</a></h2>
+<p>The <code>until</code> loop is similar to the <code>while</code> loop, with a reverse condition: it
+will stop only once the condition is met. It is just a shorter way to say
+<code>while not condition</code>.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var baloons = [1, 2, 3, 4, 5]
+
+until baloons:length is 0
+    baloons.pop
+</pre></div>
+</td></tr></table>
+
+<p>We can use <code>break</code>, <code>return</code> and <code>continue</code> inside <code>until</code> just like in the
+<code>while</code> loops.</p>
+<h2 id="the-for-loop">The <code>for</code> loop<a class="headerlink" href="#the-for-loop" title="Permanent link">&para;</a></h2>
+<p>Whereas the <code>while</code> and <code>until</code> loops are more generic, <code>for</code> loop is used
+specifically for iterating over array members and object properties.</p>
+<p>There are two variants of <code>for</code> loops:</p>
+<ul>
+<li><code>for ... in</code> for arrays, strings, and array-like objects.</li>
+<li><code>for ... of</code> for object properties.</li>
+</ul>
+<p>The <code>for ... in</code> loop is used like this.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var colorIndex = {
+    R: &#39;#ff0000&#39;
+    G: &#39;#00ff00&#39;
+    B: &#39;#0000ff&#39;
+    C: &#39;#00ffff&#39;
+    M: &#39;#ff00ff&#39;
+    Y: &#39;#ffff00&#39;
+}
+
+var colorSequence = [&#39;R&#39;, &#39;M&#39;, &#39;R&#39;, &#39;G&#39;, &#39;B&#39;, &#39;C&#39;, &#39;M&#39;]
+var colors = []
+
+for colorKey in colorSequence
+    colors.push colorIndex[colorKey]
+</pre></div>
+</td></tr></table>
+
+<p>For loops are actually arrays, and they can be assigned and passed. In the
+previous example we kept pushing into the <code>colors</code> array. This can be written 
+simply like so:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var colors = for colorKey in colorSequence
+    colorIndex[colorKey]
+</pre></div>
+</td></tr></table>
+
+<p>In <code>for</code> loops, we can also access the the indices of members we are iterating
+over.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var colors = for colorKey, index in colorSequence
+    intensity: (index + 1) * 100
+    color: colorIndex[colorKey]
+</pre></div>
+</td></tr></table>
+
+<p>The <code>for ... of</code> loop is used for objects. In it's simpler form, <code>for ... of</code> 
+iterates over the keys.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var colorIndex = {
+    R: &#39;#ff0000&#39;
+    G: &#39;#00ff00&#39;
+    B: &#39;#0000ff&#39;
+    C: &#39;#00ffff&#39;
+    M: &#39;#ff00ff&#39;
+    Y: &#39;#ffff00&#39;
+}
+
+var allColors = for key of colorIndex
+    key
+</pre></div>
+</td></tr></table>
+
+<p>We can also use <code>for ... of</code> to iterate over both keys and values.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var reverseIndex = {}
+
+for key, val of colorIndex
+    reverseIndex[val] = key
+</pre></div>
+</td></tr></table>
+
+<p>Just like the <code>while</code> loop, we can use <code>break</code>, <code>return</code> and <code>continue</code> to
+terminate the loop or skip iterations.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>var player = [
+    {name: &#39;OP&#39;, dmg: 400, hp: 100}
+    {name: &#39;Nuclear&#39;, dmg: 300, hp: 200}
+    {name: &#39;Voe&#39;: dmg: 280, hp: 210}
+    {name: &#39;Polygon&#39;, dmg: 220, hp: 180}
+    {name: &#39;Glitter&#39;, dmg: 440, hp: 120}
+    {name: &#39;Vanilla J&#39;, dmg: 300, hp: 50}
+]
+
+var strongPlayers = for player in players
+    if player:dmg &lt; 300
+        continue
+    else
+        player:name
+
+strongPlayers
+# [&#39;OP&#39;, &#39;Glitter&#39;, &#39;Vanilla J&#39;]
+</pre></div>
+</td></tr></table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../methods/" class="btn btn-neutral float-right" title="Methods">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../regexps/" class="btn btn-neutral" title="Regular expressions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>(C)2018 by Hajime Yamasaki Vukelic. Some rights reserved.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../regexps/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../methods/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
