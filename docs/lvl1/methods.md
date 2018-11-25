@@ -181,6 +181,50 @@ var normalGreeting = bang 'Hello', '.'
 In the example, `excessiveGreeting` will be `'Hello!'`, because the second 
 value is omitted.
 
+## Destructured parameters
+
+When objects are passed to methods, they can be destructured with default
+values. This is done by writing one or more key-value pairs in place of a
+parameter. 
+
+```imba
+def heal player, intensity: 5
+    player:hp += intensity
+
+var player = {
+    hp: 10
+    mp: 200
+    dmg: 500
+}
+
+var potion = {
+    intensity: 40
+}
+
+heal player, potion
+player:hp
+# 50
+```
+
+Parentheses around key-value pairs are optional.
+
+The default value is used when a key is not found on the object.
+
+```imba
+heal player, {}
+player:hp
+# 55
+```
+
+If a non-object is passed for a destructured parameter, it will be treated as
+the default value is used for the destructured keys.
+
+```imba
+heal player, null
+player:hp
+# 60
+```
+
 ## Callback parameter
 
 Methods can declare their last parameter explicitly as a callback using the
