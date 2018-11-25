@@ -54,4 +54,5 @@ compiles to JavaScript, but can also import JavaScript modules and use any
 global objects defined in the JavaScript runtime environment (e.g., `window` or 
 `global`, `console.log`, and so on).
 
-You can read more about the differences in [Imba vs JavaScript](javascript.md).
+You can read more about the differences in by reading the **Cheats** heading
+in each section.
