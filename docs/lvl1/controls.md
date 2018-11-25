@@ -275,21 +275,21 @@ Just like the `while` loop, we can use `break`, `return` and `continue` to
 terminate the loop or skip iterations.
 
 ```imba
-var player = [
+var players = [
     {name: 'OP', dmg: 400, hp: 100}
     {name: 'Nuclear', dmg: 300, hp: 200}
-    {name: 'Voe': dmg: 280, hp: 210}
+    {name: 'Voe', dmg: 280, hp: 210}
     {name: 'Polygon', dmg: 220, hp: 180}
     {name: 'Glitter', dmg: 440, hp: 120}
     {name: 'Vanilla J', dmg: 300, hp: 50}
 ]
 
 var strongPlayers = for player in players
-    if player:dmg < 300
-        continue
-    else
+    if player:dmg >= 300
         player:name
+    else
+        continue
 
 strongPlayers
-# ['OP', 'Glitter', 'Vanilla J']
+# ['OP', 'Nuclear', 'Glitter', 'Vanilla J']
 ```
