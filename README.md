@@ -62,3 +62,7 @@ If you wish to contribute to this project, you may find it helpful to know
 that the project uses [MkDocs](https://www.mkdocs.org/). The 
 `npm run watch:docs` command will spin up a local server on port `8000` that 
 will update as you edit.
+
+## Publishing the docs on GitHub Pages
+
+The documentation is published to GitHub Pages with `npm run gh-publish`.
