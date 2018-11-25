@@ -8,7 +8,8 @@
     "watch:docs": "mkdocs serve",
     "build": "webpack",
     "build:docs": "mkdocs build",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "gh-publish": "mkdocs gh-deploy"
   },
   "keywords": [
     "Imba",
