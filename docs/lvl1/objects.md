@@ -22,7 +22,7 @@ found in other languages.
 - Methods are called with `x.key` (parentheses are optional even with no
   arguments).
 - Property access on a potentially nullable object is done with `x?:key`.
-- Method call on a potentially nullable object is done with `x?:key`.
+- Method call on a potentially nullable object is done with `x?.key`.
 - Computed member access `x[expr]` works like in JavaScript.
 - Can assign default value to properties with `x:key ?= y`.
 - Object properties can be iterated with `for key of obj` or 
