@@ -1,3 +1,5 @@
+:no_entry: [DEPRECATED] Please use https://github.com/imba/imba.io
+
 # Imba guide
 
 This is a quick guide to the [Imba](http://imba.io/) language and web 
